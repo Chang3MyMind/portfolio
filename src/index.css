@@ -1,0 +1,66 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Text Gradient */
+
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@layer components {
+  /* Repeated Classes */
+
+  .gradient-on-bg {
+    @apply bg-gradient-to-r from-primary to-secondary dark:from-primary-dark dark:to-secondary-dark;
+  }
+
+  .gradient-on-text {
+    @apply text-gradient bg-gradient-to-r from-primary to-secondary dark:from-primary-dark dark:to-secondary-dark;
+  }
+
+  .section-title {
+    @apply gradient-on-text flex items-center justify-center pb-2 text-lg font-bold md:col-span-full md:mx-auto md:text-2xl lg:text-3xl xl:text-4xl lg:pb-5;
+  }
+
+  .color-text {
+    @apply text-text-color dark:text-text-color-dark;
+  }
+
+  .progress-bar {
+    @apply mb-4 h-2.5 w-full rounded-full bg-white dark:bg-black lg:h-3.5;
+  }
+
+  .slider {
+    @apply gradient-on-bg h-2.5 rounded-full lg:h-3.5;
+  }
+
+  .sections-container {
+    @apply md:grid md:grid-cols-12;
+  }
+
+  .section-content {
+    @apply flex flex-col items-center justify-center gap-y-5 md:col-span-10 md:col-start-2 md:grid md:grid-cols-10;
+  }
+
+  .form-box {
+    @apply mb-4 rounded-md bg-second-box p-1 text-text-color dark:bg-second-box-dark dark:text-text-color-dark;
+  }
+
+  .form-text {
+    @apply color-text text-xs font-medium;
+  }
+
+  .footer-icon {
+    @apply text-xl text-text-color-dark dark:text-text-color;
+  }
+
+  /* Animations */
+
+  .btn-trsp-hover {
+    @apply hover:border-0 hover:bg-gradient-to-r hover:from-primary hover:to-secondary hover:p-2 hover:dark:from-primary-dark hover:dark:to-secondary-dark;
+  }
+}

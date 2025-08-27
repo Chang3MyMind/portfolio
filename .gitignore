@@ -1,0 +1,15 @@
+# Dependências do npm
+/node_modules
+
+# Arquivos de build e output
+/dist
+
+# Arquivos de ambiente e sensíveis
+.env
+.env.local
+
+# Arquivos de log e cache
+npm-debug.log*
+yarn-error.log
+yarn-debug.log*
+.DS_Store
