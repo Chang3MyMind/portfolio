@@ -1,4 +1,3 @@
-/* src/index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -47,11 +46,11 @@
   }
 
   .form-box {
-    @apply mb-4 rounded-md bg-second-box p-1 text-text-color dark:bg-second-box-dark dark:text-text-color-dark;
+    @apply rounded-md bg-second-box p-1 text-text-color dark:bg-second-box-dark dark:text-text-color-dark;
   }
 
   .form-text {
-    @apply color-text text-xs font-medium;
+    @apply color-text text-xs font-medium mt-4;
   }
 
   .footer-icon {

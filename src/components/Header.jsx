@@ -1,4 +1,4 @@
-function Header() {
+function Header({ onToggleTheme }) {
   return (
     <>
       <nav
@@ -47,7 +47,8 @@ function Header() {
             id="theme-toggle"
             href="#"
             aria-label="Toggle theme"
-            className="text-gradient dark:from-[#1A2B47 ] dark:via-[#2C4260 ] dark:to-[#4A5B73 ] bg-gradient-to-r from-[#FF6347] via-[#FFBD99] to-[#FFDAB9]"
+            className="text-gradient from-[#1A2B47] via-[#2C4260] to-[#4A5B73] bg-gradient-to-r dark:from-[#FF6347] dark:via-[#FFBD99] dark:to-[#FFDAB9]"
+            onClick={onToggleTheme}
           >
             Theme
           </a>
@@ -124,7 +125,8 @@ function Header() {
                 id="mobile-theme-toggle"
                 href="#"
                 aria-label="Toggle theme"
-                className="text-gradient bg-gradient-to-r from-[#1A2B47] via-[#2C4260] to-[#4A5B73] text-xs font-semibold dark:from-[#FF6347] dark:via-[#FFBD99] dark:to-[#FFDAB9]"
+                className="text-gradient from-[#1A2B47] via-[#2C4260] to-[#4A5B73] bg-gradient-to-r dark:from-[#FF6347] dark:via-[#FFBD99] dark:to-[#FFDAB9] "
+                onClick={onToggleTheme}
               >
                 Theme
               </a>
