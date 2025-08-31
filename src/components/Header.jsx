@@ -69,7 +69,7 @@ function Header({ onToggleTheme }) {
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
-              stroke-width="2"
+              strokeWidth="2"
               d="M4 6h16M4 12h10M4 18h5"
             ></path>
           </svg>
