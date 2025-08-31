@@ -1,6 +1,9 @@
 import { useState } from "react";
+import useIntersectionObserver from "../hooks/useIntersectionObserver";
 
 function Contact() {
+  const [ref, isIntersecting] = useIntersectionObserver({ threshold: 0.5 }); //show in scroll
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -41,7 +44,13 @@ function Contact() {
 
   return (
     <>
-      <section id="contact" className="sections-container">
+      <section
+        ref={ref}
+        id="contact"
+        className={`sections-container fade-in-section ${
+          isIntersecting ? "is-visible" : ""
+        }`}
+      >
         <div className="section-content">
           <h2 className="section-title" id="contact-heading">
             Contact
