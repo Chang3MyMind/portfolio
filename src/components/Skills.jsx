@@ -1,6 +1,9 @@
 import SkillBar from "./SkillBar";
+import useIntersectionObserver from "../hooks/useIntersectionObserver";
 
 function Skills() {
+  const [ref, isIntersecting] = useIntersectionObserver({ threshold: 0.5 });
+
   const codingSkills = [
     { name: "HTML5", value: 62 },
     { name: "CSS", value: 67 },
@@ -21,7 +24,13 @@ function Skills() {
 
   return (
     <>
-      <section id="skills" className="sections-container">
+      <section
+        ref={ref}
+        id="skills"
+        className={`sections-container fade-in-section ${
+          isIntersecting ? "is-visible" : ""
+        }`}
+      >
         <div className="section-content">
           <h2 className="section-title">Skills</h2>
           <div className="grid w-full grid-rows-2 gap-y-6 px-5 md:col-span-full md:gap-y-12 lg:gap-y-0 lg:grid-rows-1 lg:col-span-10 lg:col-start-1 lg:grid-cols-10 lg:gap-x-6 lg:px-0">

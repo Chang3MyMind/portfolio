@@ -62,4 +62,14 @@
   .btn-trsp-hover {
     @apply hover:border-0 hover:bg-gradient-to-r hover:from-primary hover:to-secondary hover:p-2 hover:dark:from-primary-dark hover:dark:to-secondary-dark;
   }
+
+  /* Show and hidden */
+
+  .fade-in-section {
+    @apply opacity-0 translate-y-4 transition-all duration-700 ease-in-out;
+  }
+
+  .is-visible {
+    @apply opacity-100 translate-y-0;
+  }
 }

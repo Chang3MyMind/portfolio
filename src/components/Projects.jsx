@@ -1,4 +1,5 @@
 import TechnologyIcon from "./TechnologyIcon";
+import useIntersectionObserver from "../hooks/useIntersectionObserver";
 
 const projects = [
   {
@@ -32,8 +33,16 @@ const projects = [
 ];
 
 function Projects() {
+  const [ref, isIntersecting] = useIntersectionObserver({ threshold: 0.5 }); //show in scroll
+
   return (
-    <section id="projects" className="sections-container">
+    <section
+      ref={ref}
+      id="projects"
+      className={`sections-container fade-in-section ${
+        isIntersecting ? "is-visible" : ""
+      }`}
+    >
       <div className="section-content">
         <h2 className="section-title">Projects</h2>
         <div className="flex flex-col gap-y-5 md:col-span-10 lg:grid-cols-10 lg:grid-rows-2 lg:gap-x-5 lg:gap-y-10 lg:grid">

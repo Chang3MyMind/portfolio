@@ -1,7 +1,17 @@
+import useIntersectionObserver from "../hooks/useIntersectionObserver";
+
 function About() {
+  const [ref, isIntersecting] = useIntersectionObserver({ threshold: 0.5 });
+
   return (
     <>
-      <section id="about" className="sections-container">
+      <section
+        ref={ref}
+        id="about"
+        className={`sections-container fade-in-section ${
+          isIntersecting ? "is-visible" : ""
+        }`}
+      >
         <div className="section-content">
           <h2 className="section-title">About</h2>
           <div className="grid grid-cols-1 grid-rows-2 p-5 pt-0 md:col-span-full md:gap-0 md:grid-cols-2 md:grid-rows-1 xl:gap-5 row">
