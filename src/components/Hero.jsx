@@ -43,29 +43,30 @@ function Hero() {
               type="button"
             >
               Download CV
-            </button>
+            </a>
             <a
               className="text-2xl text-background-dark md:text-4xl dark:text-background xl:text-[42px]"
               href="https://www.linkedin.com/in/matheusmattos4"
               target="_blank"
-              aria-label="Link to my LinkedIn profile"
             >
               <FontAwesomeIcon icon={faLinkedin} />
+              <span className="sr-only">LinkedIn Profile</span>
             </a>
             <a
               className="text-2xl text-background-dark md:text-4xl dark:text-background xl:text-[42px]"
               href="https://github.com/Chang3MyMind"
               target="_blank"
-              aria-label="Link to my Github profile"
             >
               <FontAwesomeIcon icon={faGithub} />
+              <span className="sr-only">GitHub Profile</span>
             </a>
-            <button
+            <a
+              href="#contact"
               className="color-text gradient-on-bg h-fit p-3 text-xs font-medium md:text-base lg:text-lg xl:text-xl"
               type="button"
             >
               Contact Me
-            </button>
+            </a>
           </div>
         </div>
       </section>

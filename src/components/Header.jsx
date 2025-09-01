@@ -15,31 +15,31 @@ function Header({ onToggleTheme }) {
         <div className="hidden space-x-8 sm:flex md:text-lg xl:text-xl">
           <a
             className="color-text transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
-            href="#"
+            href="#hero"
           >
             Home
           </a>
           <a
             className="color-text transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
-            href="#"
+            href="#about"
           >
             About
           </a>
           <a
             className="color-text transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
-            href="#"
+            href="#skills"
           >
             Skills
           </a>
           <a
             className="color-text transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
-            href="#"
+            href="#projects"
           >
             Projects
           </a>
           <a
             className="color-text transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
-            href="#"
+            href="#contact"
           >
             Contact
           </a>
@@ -83,7 +83,7 @@ function Header({ onToggleTheme }) {
             <li>
               <a
                 className="color-text text-xs font-semibold transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
-                href="#"
+                href="#hero"
               >
                 Home
               </a>
@@ -91,7 +91,7 @@ function Header({ onToggleTheme }) {
             <li>
               <a
                 className="color-text text-xs font-semibold transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
-                href="#"
+                href="#about"
               >
                 About
               </a>
@@ -99,7 +99,7 @@ function Header({ onToggleTheme }) {
             <li>
               <a
                 className="color-text text-xs font-semibold transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
-                href="#"
+                href="#skills"
               >
                 Skills
               </a>
@@ -107,7 +107,7 @@ function Header({ onToggleTheme }) {
             <li>
               <a
                 className="color-text text-xs font-semibold transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
-                href="#"
+                href="#projects"
               >
                 Projects
               </a>
@@ -115,7 +115,7 @@ function Header({ onToggleTheme }) {
             <li>
               <a
                 className="color-text text-xs font-semibold transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
-                href="#"
+                href="#contact"
               >
                 Contact
               </a>
