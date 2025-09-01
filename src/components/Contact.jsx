@@ -1,4 +1,6 @@
 import emailjs from "@emailjs/browser";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 import { useState } from "react";
 import useIntersectionObserver from "../hooks/useIntersectionObserver";
@@ -13,6 +15,8 @@ function Contact() {
     message: "",
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
@@ -25,6 +29,7 @@ function Contact() {
     setErrors(validateErrors);
 
     if (Object.keys(validateErrors).length === 0) {
+      setIsSubmitting(true);
       const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
       const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
       const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
@@ -33,6 +38,7 @@ function Contact() {
         .send(serviceID, templateID, formData, publicKey)
         .then((response) => {
           console.log("E-MAIL ENVIADO!", response.status, response.text);
+          setIsSubmitting(false);
           alert("Mensagem enviada com sucesso!");
           //Limpa formulario após envio
           setFormData({
@@ -44,6 +50,7 @@ function Contact() {
         })
         .catch((err) => {
           console.log("ERRO AO ENVIAR:", err);
+          setIsSubmitting(false);
           alert("Ocorreu um erro ao enviar a mensagem. Tente novamente.");
         });
     }
@@ -170,9 +177,16 @@ function Contact() {
               <button
                 type="submit"
                 id="submitForm"
-                className="color-text mt-4 gradient-on-bg box-border inline-flex rounded-md px-5 py-1 md:px-10 md:text-lg"
+                disabled={isSubmitting}
               >
-                Send
+                {isSubmitting ? (
+                  <>
+                    <FontAwesomeIcon icon={faSpinner} spin className="mr-2" />
+                    Sanding...
+                  </>
+                ) : (
+                  "Send"
+                )}
               </button>
             </form>
           </div>
