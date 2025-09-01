@@ -39,7 +39,7 @@ function Projects() {
     <section
       ref={ref}
       id="projects"
-      className={`sections-container fade-in-section ${
+      className={`sections-container fade-in-section scroll-mt-24 ${
         isIntersecting ? "is-visible" : ""
       }`}
     >

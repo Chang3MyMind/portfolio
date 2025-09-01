@@ -80,7 +80,7 @@ function Contact() {
       <section
         ref={ref}
         id="contact"
-        className={`sections-container fade-in-section ${
+        className={`sections-container fade-in-section scroll-mt-24 ${
           isIntersecting ? "is-visible" : ""
         }`}
       >
@@ -161,7 +161,7 @@ function Contact() {
                   for="message"
                   className="form-text font-normal md:text-lg"
                 >
-                  message
+                  Message
                 </label>
                 <textarea
                   name="message"
@@ -177,6 +177,7 @@ function Contact() {
               <button
                 type="submit"
                 id="submitForm"
+                className="color-text mt-4 gradient-on-bg box-border inline-flex items-center justify-center rounded-md px-5 py-1 md:px-10 md:text-lg disabled:bg-gray-400 disabled:cursor-not-allowed disabled:px-2 disabled:md:px-4"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (

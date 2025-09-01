@@ -27,7 +27,7 @@ function Skills() {
       <section
         ref={ref}
         id="skills"
-        className={`sections-container fade-in-section ${
+        className={`sections-container fade-in-section scroll-mt-20 ${
           isIntersecting ? "is-visible" : ""
         }`}
       >

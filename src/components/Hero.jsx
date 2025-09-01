@@ -8,7 +8,7 @@ function Hero() {
 
   return (
     <>
-      <section id="hero" className="sections-container">
+      <section id="hero" className="sections-container scroll-mt-36">
         <div className="section-content md:grid-rows-3 lg:gap-y-10">
           <p className="color-text text-center text-xs font-normal md:col-span-full md:row-span-1 md:row-start-1 md:mx-auto md:text-base lg:text-lg xl:text-xl">
             Hello, I'm Matheus Mattos. A passionate Front-End Developer.
