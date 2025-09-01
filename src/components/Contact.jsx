@@ -1,14 +1,16 @@
+import emailjs from "@emailjs/browser";
+
 import { useState } from "react";
 import useIntersectionObserver from "../hooks/useIntersectionObserver";
 
 function Contact() {
-  const [ref, isIntersecting] = useIntersectionObserver({ threshold: 0.5 }); //show in scroll
+  const [ref, isIntersecting] = useIntersectionObserver({ threshold: 0.5 });
 
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
-    menssage: "",
+    message: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -21,6 +23,30 @@ function Contact() {
     e.preventDefault();
     const validateErrors = validate(formData);
     setErrors(validateErrors);
+
+    if (Object.keys(validateErrors).length === 0) {
+      const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      emailjs
+        .send(serviceID, templateID, formData, publicKey)
+        .then((response) => {
+          console.log("E-MAIL ENVIADO!", response.status, response.text);
+          alert("Mensagem enviada com sucesso!");
+          //Limpa formulario após envio
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            message: "",
+          });
+        })
+        .catch((err) => {
+          console.log("ERRO AO ENVIAR:", err);
+          alert("Ocorreu um erro ao enviar a mensagem. Tente novamente.");
+        });
+    }
   };
 
   const validate = (data) => {
