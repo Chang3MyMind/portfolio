@@ -35,8 +35,8 @@ function Contact() {
     if (!data.email) {
       errors.email = "Email is required";
     }
-    if (!data.menssage) {
-      errors.menssage = "Mensage is required";
+    if (!data.message) {
+      errors.message = "Mensage is required";
     }
 
     return errors;
@@ -125,22 +125,20 @@ function Contact() {
               </div>
               <div className="flex flex-col">
                 <label
-                  for="menssage"
+                  for="message"
                   className="form-text font-normal md:text-lg"
                 >
-                  Menssage
+                  message
                 </label>
                 <textarea
-                  name="menssage"
-                  id="menssage"
+                  name="message"
+                  id="message"
                   className="form-box flex max-h-28 w-full resize-y md:max-h-40 md:min-h-28 xl:min-h-36 xl:max-h-60"
-                  value={formData.menssage}
+                  value={formData.message}
                   onChange={handleChange}
                 ></textarea>
-                {errors.menssage && (
-                  <span className="text-red-500 text-sm">
-                    {errors.menssage}
-                  </span>
+                {errors.message && (
+                  <span className="text-red-500 text-sm">{errors.message}</span>
                 )}
               </div>
               <button
