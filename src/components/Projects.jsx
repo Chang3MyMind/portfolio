@@ -1,6 +1,8 @@
 import TechnologyIcon from "./TechnologyIcon";
 import useIntersectionObserver from "../hooks/useIntersectionObserver";
 
+import useWindowSize from "../hooks/useWindowSize";
+
 const projects = [
   {
     id: 1,
@@ -33,7 +35,11 @@ const projects = [
 ];
 
 function Projects() {
-  const [ref, isIntersecting] = useIntersectionObserver({ threshold: 0.5 }); //show in scroll
+  const { width } = useWindowSize();
+
+  const threshold = width < 1024 ? 0.15 : 0.5;
+
+  const [ref, isIntersecting] = useIntersectionObserver({ threshold });
 
   return (
     <section
