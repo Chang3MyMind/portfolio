@@ -11,8 +11,8 @@ export default {
           dark: "#242424", // Fundo no modo escuro
         },
         "text-color": {
-          DEFAULT: "#1E293B", // Texto no modo claro
-          dark: "#F1F5F9", // Texto no modo escuro
+          DEFAULT: "#0F172A", // Texto no modo claro
+          dark: "#FFFFFF", // Texto no modo escuro
         },
         // Cores para botões e gradientes
         primary: {
