@@ -99,7 +99,7 @@ function Contact() {
               <div className="flex gap-x-3 md:justify-center">
                 <div className="flex flex-col md:w-full">
                   <label
-                    for="firstName"
+                    htmlFor="firstName"
                     className="form-text font-normal md:text-lg"
                   >
                     First Name
@@ -120,7 +120,7 @@ function Contact() {
                 </div>
                 <div className="flex flex-col md:w-full">
                   <label
-                    for="lastName"
+                    htmlFor="lastName"
                     className="form-text font-normal md:text-lg"
                   >
                     Last Name
@@ -141,7 +141,10 @@ function Contact() {
                 </div>
               </div>
               <div className="flex flex-col">
-                <label for="email" className="form-text font-normal md:text-lg">
+                <label
+                  htmlFor="email"
+                  className="form-text font-normal md:text-lg"
+                >
                   E-mail
                 </label>
                 <input
@@ -158,7 +161,7 @@ function Contact() {
               </div>
               <div className="flex flex-col">
                 <label
-                  for="message"
+                  htmlFor="message"
                   className="form-text font-normal md:text-lg"
                 >
                   Message
