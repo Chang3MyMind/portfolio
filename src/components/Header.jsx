@@ -1,4 +1,16 @@
+import { useState, useRef } from "react";
+import useOnClickOutside from "../hooks/useOnClickOutside";
+
 function Header({ onToggleTheme }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  useOnClickOutside(menuRef, () => setIsMenuOpen(false));
+
+  function toggleMenu() {
+    setIsMenuOpen((isMenuOpen) => !isMenuOpen);
+  }
+
   return (
     <>
       <nav
@@ -58,7 +70,7 @@ function Header({ onToggleTheme }) {
           id="hamburger-menu"
           aria-expanded="false"
           aria-controls="nav-overlay"
-          className="text-text-color-dark focus:outline-none sm:hidden dark:text-text-color-dark"
+          onClick={toggleMenu}
         >
           <svg
             className="h-6 w-6 -scale-x-100"
@@ -76,14 +88,18 @@ function Header({ onToggleTheme }) {
         </button>
 
         <div
+          ref={menuRef}
           id="nav-overlay"
-          className="fixed right-0 top-0 z-[900] hidden h-[100vh] w-48 translate-x-full transform flex-col bg-princ-box transition-transform duration-300 dark:bg-princ-box-dark md:text-lg xl:text-xl"
+          className={`fixed right-0 top-0 z-[900] h-[100vh] w-48 transform ease-linear transition-transform duration-300  flex-col bg-princ-box  dark:bg-princ-box-dark md:text-lg xl:text-xl ${
+            isMenuOpen ? "flex translate-x-0" : "hidden translate-x-full"
+          }`}
         >
           <ul className="mt-16 flex flex-col items-start space-y-4 p-4">
             <li>
               <a
                 className="color-text text-xs font-semibold transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
                 href="#hero"
+                onClick={toggleMenu}
               >
                 Home
               </a>
@@ -92,6 +108,7 @@ function Header({ onToggleTheme }) {
               <a
                 className="color-text text-xs font-semibold transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
                 href="#about"
+                onClick={toggleMenu}
               >
                 About
               </a>
@@ -100,6 +117,7 @@ function Header({ onToggleTheme }) {
               <a
                 className="color-text text-xs font-semibold transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
                 href="#skills"
+                onClick={toggleMenu}
               >
                 Skills
               </a>
@@ -108,6 +126,7 @@ function Header({ onToggleTheme }) {
               <a
                 className="color-text text-xs font-semibold transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
                 href="#projects"
+                onClick={toggleMenu}
               >
                 Projects
               </a>
@@ -116,6 +135,7 @@ function Header({ onToggleTheme }) {
               <a
                 className="color-text text-xs font-semibold transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
                 href="#contact"
+                onClick={toggleMenu}
               >
                 Contact
               </a>
