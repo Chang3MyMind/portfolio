@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import Header from "./components/header";
+import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
@@ -26,7 +26,7 @@ function App() {
   return (
     <>
       <div className="flex flex-col min-h-screen bg-background dark:bg-background-dark transition-transform ease-out duration-300">
-        <header className="bg-white shadow-md dark:bg-princ-box-dark">
+        <header className=" sticky top-0 z-10 bg-white shadow-md dark:bg-princ-box-dark">
           <Header onToggleTheme={toggleTheme} />
         </header>
 

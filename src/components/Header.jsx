@@ -70,6 +70,7 @@ function Header({ onToggleTheme }) {
           id="hamburger-menu"
           aria-expanded="false"
           aria-controls="nav-overlay"
+          className="text-text-color focus:outline-none sm:hidden dark:text-text-color-dark"
           onClick={toggleMenu}
         >
           <svg
@@ -143,9 +144,8 @@ function Header({ onToggleTheme }) {
             <li>
               <a
                 id="mobile-theme-toggle"
-                href="#"
                 aria-label="Toggle theme"
-                className="text-gradient from-[#1A2B47] via-[#2C4260] to-[#4A5B73] bg-gradient-to-r dark:from-[#FF6347] dark:via-[#FFBD99] dark:to-[#FFDAB9] "
+                className="text-xs font-semibold text-gradient from-[#1A2B47] via-[#2C4260] to-[#4A5B73] bg-gradient-to-r dark:from-[#FF6347] dark:via-[#FFBD99] dark:to-[#FFDAB9] "
                 onClick={onToggleTheme}
               >
                 Theme
