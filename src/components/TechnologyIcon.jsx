@@ -13,7 +13,7 @@ const iconMap = {
   JavaScript: { type: "fa", icon: faJs, color: "#F7DF1E" },
   React: { type: "fa", icon: faReact, color: "#61DAFB" },
   NodeJs: { type: "fa", icon: faNodeJs, color: "#339933" },
-  Tailwind: { type: "img", src: "src/assets/img/tailwindIcon.svg" },
+  Tailwind: { type: "img", src: "/img/tailwindIcon.svg" },
 };
 
 function TechnologyIcon({ technology }) {

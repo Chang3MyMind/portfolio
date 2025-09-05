@@ -8,14 +8,14 @@ const projects = [
     id: 1,
     name: "Trilha Challenge Junior",
     technologies: ["HTML", "Tailwind", "JavaScript"],
-    image: "src/assets/img/desafioJunior.png",
+    image: "/img/desafioJunior.png",
     link: "https://github.com/Chang3MyMind/TrilhaChallengeJunior",
   },
   {
     id: 2,
     name: "Discord Page",
     technologies: ["HTML", "Tailwind"],
-    image: "src/assets/img/desafioResponsividade.png",
+    image: "/img/desafioResponsividade.png",
     link: "https://github.com/Chang3MyMind/desafio-responsividade",
   },
 
@@ -23,7 +23,7 @@ const projects = [
     id: 3,
     name: "Portfolio (Legado)",
     technologies: ["HTML", "CSS", "JavaScript"],
-    image: "src/assets/img/projetoLegado.png",
+    image: "/img/projetoLegado.png",
     link: "https://github.com/Chang3MyMind/chang3mymind.github.io",
   },
 
@@ -31,7 +31,7 @@ const projects = [
     id: 4,
     name: "Portfólio Pessoal",
     technologies: ["HTML", "Tailwind", "JavaScript"],
-    image: "src/assets/img/Frame 16.png",
+    image: "/img/Frame 16.png",
     link: "https://github.com/seu-usuario/projeto-4",
   },*/
 ];
