@@ -57,9 +57,8 @@ function Header({ onToggleTheme }) {
           </a>
           <a
             id="theme-toggle"
-            href="#"
             aria-label="Toggle theme"
-            className="text-gradient from-[#1A2B47] via-[#2C4260] to-[#4A5B73] bg-gradient-to-r dark:from-[#FF6347] dark:via-[#FFBD99] dark:to-[#FFDAB9]"
+            className="cursor-pointer text-gradient from-[#1A2B47] via-[#2C4260] to-[#4A5B73] bg-gradient-to-r dark:from-[#FF6347] dark:via-[#FFBD99] dark:to-[#FFDAB9]"
             onClick={onToggleTheme}
           >
             Theme
