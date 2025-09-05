@@ -15,11 +15,11 @@ function About() {
         <div className="section-content">
           <h2 className="section-title">About</h2>
           <div className="grid grid-cols-1 grid-rows-2 p-5 pt-0 md:col-span-full md:gap-0 md:grid-cols-2 md:grid-rows-1 xl:gap-5 row">
-            <div className="mx-auto h-full w-full max-h-[217px] max-w-[154px] md:max-h-[317px] md:max-w-[254px] lg:max-w-[354px] lg:max-h-[417px]">
+            <div className="mb-3 mx-auto flex h-40 w-40 items-center justify-center overflow-hidden rounded-full md:mb-0 md:h-56 md:w-56 lg:h-80 lg:w-80">
               <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSueiYz5f-OG_lGc6rFTBRNItyQpmLsug8zlA&s"
-                alt="A random Image"
-                className="h-full w-full"
+                src="src/assets/img/Face_Foto.png"
+                alt="Uma foto de perfil do Matheus Mattos"
+                className="h-full w-full object-cover"
               />
             </div>
             <div className="my-auto">
