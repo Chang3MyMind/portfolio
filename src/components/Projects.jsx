@@ -6,32 +6,34 @@ import useWindowSize from "../hooks/useWindowSize";
 const projects = [
   {
     id: 1,
-    name: "Projeto de E-commerce",
-    technologies: ["React", "Tailwind", "NodeJs"],
-    image: "src/assets/img/Frame 16.png",
-    link: "https://github.com/seu-usuario/projeto-1",
+    name: "Trilha Challenge Junior",
+    technologies: ["HTML", "Tailwind", "JavaScript"],
+    image: "src/assets/img/desafioJunior.png",
+    link: "https://github.com/Chang3MyMind/TrilhaChallengeJunior",
   },
   {
     id: 2,
-    name: "Landing Page Responsiva",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    image: "src/assets/img/Frame 16.png",
-    link: "https://github.com/seu-usuario/projeto-2",
+    name: "Discord Page",
+    technologies: ["HTML", "Tailwind"],
+    image: "src/assets/img/desafioResponsividade.png",
+    link: "https://github.com/Chang3MyMind/desafio-responsividade",
   },
+
   {
     id: 3,
-    name: "Sistema de Blog",
-    technologies: ["React", "Tailwind", "JavaScript"],
-    image: "src/assets/img/Frame 16.png",
-    link: "https://github.com/seu-usuario/projeto-3",
+    name: "Portfolio (Legado)",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    image: "src/assets/img/projetoLegado.png",
+    link: "https://github.com/Chang3MyMind/chang3mymind.github.io",
   },
-  {
+
+  /* Template{
     id: 4,
     name: "Portfólio Pessoal",
     technologies: ["HTML", "Tailwind", "JavaScript"],
     image: "src/assets/img/Frame 16.png",
     link: "https://github.com/seu-usuario/projeto-4",
-  },
+  },*/
 ];
 
 function Projects() {
