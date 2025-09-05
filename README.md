@@ -15,14 +15,22 @@ Este é o meu portfólio pessoal, uma aplicação web de página única (SPA) co
 ## ✨ Funcionalidades Principais
 
 - **🎨 Tema Dinâmico:** Alternância entre os modos Dark e Light.
+
 - **✍️ Animações de UI:** Efeitos de "Typewriter" e "Scroll Reveal" para uma experiência fluida e moderna.
+
 - **📬 Formulário de Contato Funcional:**
   - Validação completa dos campos com feedback de erro claro.
+
   - Estado de "loading" com spinner para uma melhor UX durante o envio.
+
   - Integração com a API do EmailJS para envio real de e-mails.
+
 - **♿ Acessibilidade (Nota 100):** Atingiu 100/100 na auditoria do Lighthouse, garantindo uma experiência inclusiva.
+
 - **🧪 Qualidade de Código Garantida:** Testes unitários com Vitest e React Testing Library para validar a lógica dos componentes.
+
 - **📱 Design Responsivo:** Interface totalmente adaptável para desktops, tablets e celulares.
+
 - **📖 Histórico de Commits Profissional:** Versionamento Git com commits atômicos e semânticos.
 
 ---
