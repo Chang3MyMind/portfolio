@@ -1,35 +1,29 @@
 # Portfólio de Matheus Mattos
 
-![Preview do Portfólio](src/assets/img/Site-image.png)
+Preview do Portfólio
+
+<img width="1350" height="655" alt="Image" src="https://github.com/user-attachments/assets/7f5cae3b-a191-40da-b026-9ff7ab61b562" />
 
 ## 🚀 Sobre o Projeto
 
 Este é o meu portfólio pessoal, uma aplicação web de página única (SPA) construída do zero para demonstrar minhas habilidades em desenvolvimento front-end moderno. O projeto foi desenvolvido com foco em interatividade, experiência do usuário, acessibilidade e boas práticas de código.
 
-🔗 **Acesse a versão ao vivo:** [**seusite.vercel.app**](https://seusite.vercel.app)
+🔗 **Acesse a versão ao vivo:** [**https://portfolio-ten-steel-18.vercel.app**](https://portfolio-ten-steel-18.vercel.app)
 
 ---
 
 ## ✨ Funcionalidades Principais
 
-- **🎨 Tema Dinâmico:** Alternância entre os modos Dark e Light com persistência da preferência.
-
-- **✍️ Animações de UI:** Efeitos de "Typewriter" no título e "Scroll Reveal" para entrada suave das seções.
-
+- **🎨 Tema Dinâmico:** Alternância entre os modos Dark e Light.
+- **✍️ Animações de UI:** Efeitos de "Typewriter" e "Scroll Reveal" para uma experiência fluida e moderna.
 - **📬 Formulário de Contato Funcional:**
-  - Validação de campos em tempo real com feedback claro.
-
-  - Estado de "loading" durante o envio para melhor UX.
-
-  - Integração real para envio de e-mails via API do EmailJS.
-
-- **♿ Acessibilidade:** Projeto auditado com Lighthouse
-
-- **🧪 Qualidade de Código Garantida** Testes unitários com Vitest e React Testing Library para validar a lógica dos componentes.
-
-- **📱 Design Responsivo** Interface totalmente adaptável para desktops, tablets e celulares.
-
-- **📖 Histórico de Commits Profissional:** Versionamento com Git seguindo o padrão de commits atômicos e semânticos.
+  - Validação completa dos campos com feedback de erro claro.
+  - Estado de "loading" com spinner para uma melhor UX durante o envio.
+  - Integração com a API do EmailJS para envio real de e-mails.
+- **♿ Acessibilidade (Nota 100):** Atingiu 100/100 na auditoria do Lighthouse, garantindo uma experiência inclusiva.
+- **🧪 Qualidade de Código Garantida:** Testes unitários com Vitest e React Testing Library para validar a lógica dos componentes.
+- **📱 Design Responsivo:** Interface totalmente adaptável para desktops, tablets e celulares.
+- **📖 Histórico de Commits Profissional:** Versionamento Git com commits atômicos e semânticos.
 
 ---
 
@@ -56,10 +50,10 @@ Para rodar este projeto na sua máquina, siga os passos abaixo:
 
 ```bash
 # 1. Clone o repositório
-git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
+git clone https://github.com/Chang3MyMind/portfolio.git
 
 # 2. Navegue até o diretório do projeto
-cd seu-repositorio
+cd portfolio
 
 # 3. Instale as dependências
 npm install
