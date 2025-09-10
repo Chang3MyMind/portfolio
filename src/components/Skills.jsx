@@ -5,21 +5,21 @@ function Skills() {
   const [ref, isIntersecting] = useIntersectionObserver({ threshold: 0.5 });
 
   const codingSkills = [
-    { name: "HTML5", value: 62 },
-    { name: "CSS", value: 67 },
-    { name: "JavaScript", value: 41 },
-    { name: "Tailwind", value: 68 },
-    { name: "React", value: 34 },
-    { name: "Git & Github", value: 55 },
+    { name: "HTML5", value: 83 },
+    { name: "CSS", value: 86 },
+    { name: "JavaScript", value: 70 },
+    { name: "Tailwind", value: 90 },
+    { name: "React", value: 75 },
+    { name: "Git & Github", value: 83 },
   ];
 
   const personalSkills = [
-    { name: "Communication", value: 68 },
-    { name: "Self-Learning", value: 85 },
-    { name: "Initiative", value: 73 },
-    { name: "Problem Solving", value: 68 },
-    { name: "Commitment", value: 75 },
-    { name: "Team Work", value: 80 },
+    { name: "Communication", value: 86 },
+    { name: "Self-Learning", value: 91 },
+    { name: "Initiative", value: 90 },
+    { name: "Problem Solving", value: 82 },
+    { name: "Commitment", value: 93 },
+    { name: "Team Work", value: 90 },
   ];
 
   return (
