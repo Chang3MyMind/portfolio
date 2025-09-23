@@ -26,9 +26,16 @@ const projects = [
     image: "/img/projetoLegado.png",
     link: "https://github.com/Chang3MyMind/chang3mymind.github.io",
   },
+  {
+    id: 4,
+    name: "Gerenciador de Finanças",
+    technologies: ["React", "Tailwind", "JavaScript", "Vite"],
+    image: "/img/gerenciadorFinancas.png",
+    link: "https://github.com/Chang3MyMind/Gerenciador-de-financas",
+  },
 
   /* Template{
-    id: 4,
+    id: 5,
     name: "Portfólio Pessoal",
     technologies: ["HTML", "Tailwind", "JavaScript"],
     image: "/img/Frame 16.png",
