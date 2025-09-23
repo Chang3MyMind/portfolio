@@ -27,7 +27,7 @@ function TechnologyIcon({ technology }) {
   if (tech.type === "img") {
     return (
       <img
-        className="md:w-5 lg:w-6 xl:w-8"
+        className="w-4 md:w-5 lg:w-6 "
         src={tech.src}
         alt={`${technology} Icon`}
       />
