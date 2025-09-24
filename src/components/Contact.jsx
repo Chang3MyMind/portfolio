@@ -1,79 +1,49 @@
 import emailjs from "@emailjs/browser";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
-
 import { useState } from "react";
 import useIntersectionObserver from "../hooks/useIntersectionObserver";
 
-function Contact() {
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+import { contactFormSchema } from "../schemas/contactFormSchema";
+
+export default function Contact() {
   const [ref, isIntersecting] = useIntersectionObserver({ threshold: 0.5 });
-
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    message: "",
-  });
-
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const [errors, setErrors] = useState({});
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    resolver: zodResolver(contactFormSchema),
+  });
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  function sendEmail(data) {
+    setIsSubmitting(true);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const validateErrors = validate(formData);
-    setErrors(validateErrors);
+    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-    if (Object.keys(validateErrors).length === 0) {
-      setIsSubmitting(true);
-      const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-      const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-
-      emailjs
-        .send(serviceID, templateID, formData, publicKey)
-        .then((response) => {
-          console.log("E-MAIL ENVIADO!", response.status, response.text);
-          setIsSubmitting(false);
-          alert("Mensagem enviada com sucesso!");
-          //Limpa formulario após envio
-          setFormData({
-            firstName: "",
-            lastName: "",
-            email: "",
-            message: "",
-          });
-        })
-        .catch((err) => {
-          console.log("ERRO AO ENVIAR:", err);
-          setIsSubmitting(false);
-          alert("Ocorreu um erro ao enviar a mensagem. Tente novamente.");
-        });
-    }
-  };
-
-  const validate = (data) => {
-    const errors = {};
-
-    if (!data.firstName) {
-      errors.firstName = "First name is required";
-    }
-    if (!data.lastName) {
-      errors.lastName = "Last name is required";
-    }
-    if (!data.email) {
-      errors.email = "Email is required";
-    }
-    if (!data.message) {
-      errors.message = "Mensage is required";
-    }
-
-    return errors;
-  };
+    emailjs
+      .send(serviceID, templateID, data, publicKey)
+      .then((response) => {
+        console.log("E-MAIL ENVIADO!", response.status, response.text);
+        alert("Mensagem enviada com sucesso!");
+        reset();
+      })
+      .catch((err) => {
+        console.log("ERRO AO ENVIAR:", err);
+        alert("Ocorreu um erro ao enviar a mensagem. Tente novamente.");
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+      });
+  }
 
   return (
     <>
@@ -94,7 +64,7 @@ function Contact() {
               method="post"
               role="form"
               aria-labelledby="contact-heading"
-              onSubmit={handleSubmit}
+              onSubmit={handleSubmit(sendEmail)}
             >
               <div className="flex gap-x-3 md:justify-center">
                 <div className="flex flex-col md:w-full">
@@ -109,12 +79,11 @@ function Contact() {
                     name="firstName"
                     id="firstName"
                     className="form-box flex w-full"
-                    value={formData.firstName}
-                    onChange={handleChange}
+                    {...register("firstName")}
                   />
                   {errors.firstName && (
                     <span className="text-red-500 text-sm">
-                      {errors.firstName}
+                      {errors.firstName.message}
                     </span>
                   )}
                 </div>
@@ -130,12 +99,11 @@ function Contact() {
                     name="lastName"
                     id="lastName"
                     className="form-box flex w-full"
-                    value={formData.lastName}
-                    onChange={handleChange}
+                    {...register("lastName")}
                   />
                   {errors.lastName && (
                     <span className="text-red-500 text-sm">
-                      {errors.lastName}
+                      {errors.lastName.message}
                     </span>
                   )}
                 </div>
@@ -152,11 +120,12 @@ function Contact() {
                   type="email"
                   name="email"
                   id="email"
-                  value={formData.email}
-                  onChange={handleChange}
+                  {...register("email")}
                 />
                 {errors.email && (
-                  <span className="text-red-500 text-sm">{errors.email}</span>
+                  <span className="text-red-500 text-sm">
+                    {errors.email.message}
+                  </span>
                 )}
               </div>
               <div className="flex flex-col">
@@ -170,11 +139,12 @@ function Contact() {
                   name="message"
                   id="message"
                   className="form-box flex max-h-28 w-full resize-y md:max-h-40 md:min-h-28 xl:min-h-36 xl:max-h-60"
-                  value={formData.message}
-                  onChange={handleChange}
+                  {...register("message")}
                 ></textarea>
                 {errors.message && (
-                  <span className="text-red-500 text-sm">{errors.message}</span>
+                  <span className="text-red-500 text-sm">
+                    {errors.message.message}
+                  </span>
                 )}
               </div>
               <button
@@ -199,5 +169,3 @@ function Contact() {
     </>
   );
 }
-
-export default Contact;
