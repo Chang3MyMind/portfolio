@@ -1,7 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { useContext } from "react";
+import { NotificationContext } from "../context/NotificationContext";
 
-export default function Notification({ notification, onClose }) {
+export default function Notification() {
+  const { notification, onClose } = useContext(NotificationContext);
+
   return (
     <div className=" z-50 fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
       <div className="bg-background dark:bg-background-dark p-6  rounded-lg shadow-2x relative">
