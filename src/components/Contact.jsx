@@ -9,7 +9,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 import { contactFormSchema } from "../schemas/contactFormSchema";
 
-export default function Contact() {
+export default function Contact({ setSendModal, setErrorModal }) {
   const [ref, isIntersecting] = useIntersectionObserver({ threshold: 0.5 });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -23,6 +23,34 @@ export default function Contact() {
   });
 
   function sendEmail(data) {
+    /*
+    // ===== INÍCIO DOS GATILHOS DE TESTE =====
+
+    // Gatilho de Erro 
+    if (data.firstName.toLowerCase() === "erro") {
+      console.log("Forçando estado de ERRO para teste...");
+      setErrorModal();
+      return; // Para a execução aqui
+    }
+
+    // Gatilho de Sucesso
+    if (data.firstName.toLowerCase() === "sucesso") {
+      console.log("Forçando estado de SUCESSO para teste...");
+      setIsSubmitting(true);
+
+      // um setTimeout para simular o tempo de espera da rede 
+      setTimeout(() => {
+        setSendModal(); 
+        reset(); 
+        setIsSubmitting(false); 
+      }, 2000); 
+
+      return; // Para a execução aqui
+    }
+    // ===== FIM DOS GATILHOS DE TESTE =====
+
+  */
+
     setIsSubmitting(true);
 
     const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
@@ -31,14 +59,12 @@ export default function Contact() {
 
     emailjs
       .send(serviceID, templateID, data, publicKey)
-      .then((response) => {
-        console.log("E-MAIL ENVIADO!", response.status, response.text);
-        alert("Mensagem enviada com sucesso!");
+      .then(() => {
+        setSendModal();
         reset();
       })
-      .catch((err) => {
-        console.log("ERRO AO ENVIAR:", err);
-        alert("Ocorreu um erro ao enviar a mensagem. Tente novamente.");
+      .catch(() => {
+        setErrorModal();
       })
       .finally(() => {
         setIsSubmitting(false);
