@@ -1,15 +1,18 @@
 import emailjs from "@emailjs/browser";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import useIntersectionObserver from "../hooks/useIntersectionObserver";
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { contactFormSchema } from "../schemas/contactFormSchema";
+import { NotificationContext } from "../context/NotificationContext";
 
-export default function Contact({ setSendModal, setErrorModal }) {
+export default function Contact() {
+  const { setSendModal, setErrorModal } = useContext(NotificationContext);
+
   const [ref, isIntersecting] = useIntersectionObserver({ threshold: 0.5 });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -49,6 +52,7 @@ export default function Contact({ setSendModal, setErrorModal }) {
       }
       // ===== FIM DOS GATILHOS DE TESTE =====
     }
+
     setIsSubmitting(true);
 
     const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
