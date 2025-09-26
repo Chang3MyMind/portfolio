@@ -14,12 +14,12 @@ function Skills() {
   ];
 
   const personalSkills = [
-    { name: "Communication", value: 86 },
-    { name: "Self-Learning", value: 91 },
-    { name: "Initiative", value: 90 },
-    { name: "Problem Solving", value: 82 },
-    { name: "Commitment", value: 93 },
-    { name: "Team Work", value: 90 },
+    { name: "Comunicação", value: 86 },
+    { name: "Autodidatismo", value: 91 },
+    { name: "Proatividade", value: 90 },
+    { name: "Resolução de Problemas", value: 82 },
+    { name: "Comprometimento", value: 93 },
+    { name: "Trabalho em Equipe", value: 90 },
   ];
 
   return (
@@ -32,12 +32,12 @@ function Skills() {
         }`}
       >
         <div className="section-content">
-          <h2 className="section-title">Skills</h2>
+          <h2 className="section-title">Habilidades</h2>
           <div className="grid w-full grid-rows-2 gap-y-6 px-5 md:col-span-full md:gap-y-12 lg:gap-y-0 lg:grid-rows-1 lg:col-span-10 lg:col-start-1 lg:grid-cols-10 lg:gap-x-6 lg:px-0">
             {/* Coding Skills */}
             <div className="lg:col-start-1 lg:col-span-5">
               <h3 className="color-text text-lg font-medium lg:text-xl">
-                Coding Skills
+                Habilidades Técnicas
               </h3>
               <div className="h-fit border-2 border-primary bg-princ-box p-3 dark:border-primary-dark dark:bg-princ-box-dark lg:space-y-8">
                 {codingSkills.map((skill) => (
@@ -53,7 +53,7 @@ function Skills() {
             {/* Personal Skills */}
             <div className="lg:col-start-6 lg:col-span-5">
               <h3 className="color-text text-lg font-medium lg:text-xl">
-                Personal Skills
+                Habilidades Pessoais
               </h3>
               <div className="h-fit gap-y-5 border-2 border-primary bg-princ-box p-3 dark:border-primary-dark dark:bg-princ-box-dark lg:space-y-8">
                 {personalSkills.map((skill) => (

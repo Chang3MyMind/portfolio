@@ -84,7 +84,7 @@ export default function Contact() {
       >
         <div className="section-content">
           <h2 className="section-title" id="contact-heading">
-            Contact
+            Contato
           </h2>
           <div className="flex flex-col p-5 md:col-span-10 md:col-start-1 md:grid">
             <form
@@ -100,7 +100,7 @@ export default function Contact() {
                     htmlFor="firstName"
                     className="form-text font-normal md:text-lg"
                   >
-                    First Name
+                    Nome
                   </label>
                   <input
                     type="text"
@@ -120,7 +120,7 @@ export default function Contact() {
                     htmlFor="lastName"
                     className="form-text font-normal md:text-lg"
                   >
-                    Last Name
+                    Sobrenome
                   </label>
                   <input
                     type="text"
@@ -161,7 +161,7 @@ export default function Contact() {
                   htmlFor="message"
                   className="form-text font-normal md:text-lg"
                 >
-                  Message
+                  Mensagem
                 </label>
                 <textarea
                   name="message"
@@ -184,10 +184,10 @@ export default function Contact() {
                 {isSubmitting ? (
                   <>
                     <FontAwesomeIcon icon={faSpinner} spin className="mr-2" />
-                    Sanding...
+                    Enviando...
                   </>
                 ) : (
-                  "Send"
+                  "Enviar"
                 )}
               </button>
             </form>

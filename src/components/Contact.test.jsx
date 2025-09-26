@@ -18,11 +18,11 @@ describe("Componente Contact", () => {
   window.IntersectionObserver = MockIntersectionObserver;
   it("deve exibir mensagens de erro ao submeter o formulário com campos vazios", async () => {
     render(<Contact />);
-    const submitButton = screen.getByRole("button", { name: /send/i });
+    const submitButton = screen.getByRole("button", { name: /Enviar/i });
     await userEvent.click(submitButton);
 
     expect(
-      await screen.findByText(/first name is required/i)
+      await screen.findByText(/O nome precisa ter no mínimo 3 caracteres./i)
     ).toBeInTheDocument();
   });
 });

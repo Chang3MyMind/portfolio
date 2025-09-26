@@ -59,7 +59,7 @@ function Projects() {
       }`}
     >
       <div className="section-content">
-        <h2 className="section-title">Projects</h2>
+        <h2 className="section-title">Projetos</h2>
         <div className="flex flex-col gap-y-5 md:col-span-10 lg:grid-cols-10 lg:grid-rows-2 lg:gap-x-5 lg:gap-y-10 lg:grid">
           {projects.map((project, index) => {
             const colStart = index % 2 === 0 ? 1 : 6;
@@ -87,7 +87,7 @@ function Projects() {
                 </a>
                 <div className="flex items-center gap-2 mt-2">
                   <h4 className="color-text text-xs font-normal md:text-base xl:text-xl">
-                    Technologies:
+                    Tecnologias Utilizadas:
                   </h4>
                   {project.technologies.map((tech) => (
                     <TechnologyIcon key={tech} technology={tech} />

@@ -29,31 +29,31 @@ function Header({ onToggleTheme }) {
             className="color-text transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
             href="#hero"
           >
-            Home
+            Ínicio
           </a>
           <a
             className="color-text transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
             href="#about"
           >
-            About
+            Sobre
           </a>
           <a
             className="color-text transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
             href="#skills"
           >
-            Skills
+            Habilidades
           </a>
           <a
             className="color-text transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
             href="#projects"
           >
-            Projects
+            Projetos
           </a>
           <a
             className="color-text transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
             href="#contact"
           >
-            Contact
+            Contato
           </a>
           <a
             id="theme-toggle"
@@ -61,7 +61,7 @@ function Header({ onToggleTheme }) {
             className="cursor-pointer text-gradient from-[#1A2B47] via-[#2C4260] to-[#4A5B73] bg-gradient-to-r dark:from-[#FF6347] dark:via-[#FFBD99] dark:to-[#FFDAB9]"
             onClick={onToggleTheme}
           >
-            Theme
+            Tema
           </a>
         </div>
 
@@ -101,7 +101,7 @@ function Header({ onToggleTheme }) {
                 href="#hero"
                 onClick={toggleMenu}
               >
-                Home
+                Ínicio
               </a>
             </li>
             <li>
@@ -110,7 +110,7 @@ function Header({ onToggleTheme }) {
                 href="#about"
                 onClick={toggleMenu}
               >
-                About
+                Sobre
               </a>
             </li>
             <li>
@@ -119,7 +119,7 @@ function Header({ onToggleTheme }) {
                 href="#skills"
                 onClick={toggleMenu}
               >
-                Skills
+                Habilidades
               </a>
             </li>
             <li>
@@ -128,7 +128,7 @@ function Header({ onToggleTheme }) {
                 href="#projects"
                 onClick={toggleMenu}
               >
-                Projects
+                Projetos
               </a>
             </li>
             <li>
@@ -137,7 +137,7 @@ function Header({ onToggleTheme }) {
                 href="#contact"
                 onClick={toggleMenu}
               >
-                Contact
+                Contato
               </a>
             </li>
             <li>
@@ -147,7 +147,7 @@ function Header({ onToggleTheme }) {
                 className="text-xs font-semibold text-gradient from-[#1A2B47] via-[#2C4260] to-[#4A5B73] bg-gradient-to-r dark:from-[#FF6347] dark:via-[#FFBD99] dark:to-[#FFDAB9] "
                 onClick={onToggleTheme}
               >
-                Theme
+                Tema
               </a>
             </li>
           </ul>
