@@ -13,7 +13,7 @@ function About() {
         }`}
       >
         <div className="section-content">
-          <h2 className="section-title">About</h2>
+          <h2 className="section-title">Sobre</h2>
           <div className="grid grid-cols-1 grid-rows-2 p-5 pt-0 md:col-span-full md:gap-0 md:grid-cols-2 md:grid-rows-1 xl:gap-5 row">
             <div className="mb-3 mx-auto flex h-40 w-40 items-center justify-center overflow-hidden rounded-full md:mb-0 md:h-56 md:w-56 lg:h-80 lg:w-80">
               <img
@@ -24,11 +24,11 @@ function About() {
             </div>
             <div className="my-auto">
               <h3 className="color-text text-justify text-sm font-medium md:text-base lg:text-lg xl:text-xl">
-                Hello! I’m Matheus Mattos, a Front-End Developer passionate
-                about crafting responsive and accessible interfaces. I
-                specialize in HTML5, CSS3, and modern JavaScript ES6+. I'm
-                currently focused on building my portfolio to showcase my work
-                and further develop my skills with clean and scalable code.
+                Olá! Eu sou o Matheus Mattos, um Desenvolvedor Front-End
+                apaixonado por criar interfaces responsivas e acessíveis. Sou
+                especializado em HTML5, CSS3 e JavaScript moderno (ES6+).
+                Atualmente, meu foco é construir projetos para meu portfólio que
+                demonstrem minhas habilidades com código limpo e escalável.
               </h3>
             </div>
           </div>

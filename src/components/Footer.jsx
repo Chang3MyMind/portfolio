@@ -13,7 +13,7 @@ function Footer() {
           className="footer-icon"
           target="_blank"
           href="https://www.linkedin.com/in/matheusmattos4"
-          aria-label="Link to my LinkedIn profile"
+          aria-label="Link para o meu perfil do Linkedin"
         >
           <FontAwesomeIcon className="text-2xl md:text-3xl" icon={faLinkedin} />
         </a>
@@ -21,7 +21,7 @@ function Footer() {
           className="footer-icon"
           target="_blank"
           href="https://github.com/Chang3MyMind"
-          aria-label="Link to my Github profile"
+          aria-label="Link para o meu perfil do Github"
         >
           <FontAwesomeIcon className="text-2xl md:text-3xl" icon={faGithub} />
         </a>
@@ -29,7 +29,7 @@ function Footer() {
           className="footer-icon"
           target="_blank"
           href="https://www.instagram.com/m4theus_m4ttos"
-          aria-label="Link to my Instagram profile"
+          aria-label="Link para o meu perfil do Instagram"
         >
           <FontAwesomeIcon
             className="text-2xl md:text-3xl"
