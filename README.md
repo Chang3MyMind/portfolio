@@ -2,7 +2,7 @@
 
 Preview do Portfólio
 
-<img width="1350" height="655" alt="Image" src="https://github.com/user-attachments/assets/7f5cae3b-a191-40da-b026-9ff7ab61b562" />
+<img width="681" height="344" alt="Image" src="https://github.com/user-attachments/assets/27aec549-3842-4ba0-ace0-9356831c23cd" />
 
 ## 🚀 Sobre o Projeto
 
@@ -19,6 +19,7 @@ Este é o meu portfólio pessoal, uma aplicação web de página única (SPA) co
 - **✍️ Animações de UI:** Efeitos de "Typewriter" e "Scroll Reveal" para uma experiência fluida e moderna.
 
 - **📬 Formulário de Contato Funcional:**
+
   - Validação completa dos campos com feedback de erro claro.
 
   - Estado de "loading" com spinner para uma melhor UX durante o envio.
