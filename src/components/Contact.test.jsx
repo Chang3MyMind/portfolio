@@ -1,5 +1,3 @@
-// Importa as ferramentas que vamos usar
-import "@testing-library/jest-dom";
 import { vi } from "vitest";
 
 import { render, screen } from "@testing-library/react";
@@ -7,6 +5,7 @@ import userEvent from "@testing-library/user-event";
 import { describe, it, expect } from "vitest";
 
 import Contact from "./Contact";
+import NotificationProvider from "../context/NotificationProvider.jsx";
 
 describe("Componente Contact", () => {
   const MockIntersectionObserver = vi.fn();
@@ -16,8 +15,12 @@ describe("Componente Contact", () => {
     disconnect: () => null,
   });
   window.IntersectionObserver = MockIntersectionObserver;
-  it("deve exibir mensagens de erro ao submeter o formulário com campos vazios", async () => {
-    render(<Contact />);
+  it("should display error messages when submitting the form with empty fields", async () => {
+    render(
+      <NotificationProvider>
+        <Contact />
+      </NotificationProvider>
+    );
     const submitButton = screen.getByRole("button", { name: /Enviar/i });
     await userEvent.click(submitButton);
 
