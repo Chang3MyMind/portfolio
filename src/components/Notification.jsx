@@ -10,11 +10,13 @@ export default function Notification() {
     <div className=" z-50 fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
       <div className="bg-background dark:bg-background-dark p-6  rounded-lg shadow-2x relative">
         {notification.type === "error" ? (
-          <FontAwesomeIcon
-            icon={faXmark}
-            className="absolute cursor-pointer top-2 right-2"
+          <button
+            aria-label="Fechar"
             onClick={onClose}
-          />
+            className="absolute cursor-pointer top-2 right-2 text-text-color dark:text-text-color-dark"
+          >
+            <FontAwesomeIcon icon={faXmark} />
+          </button>
         ) : null}
         <h2 className="text-center mb-5 text-text-color dark:text-text-color-dark font-bold text-base md:text-lg ">
           {notification.title}
