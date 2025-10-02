@@ -10,6 +10,13 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { contactFormSchema } from "../schemas/contactFormSchema";
 import { NotificationContext } from "../context/NotificationContext";
 
+type Data = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  message: string;
+};
+
 export default function Contact() {
   const { setSendModal, setErrorModal } = useContext(NotificationContext);
 
@@ -25,7 +32,7 @@ export default function Contact() {
     resolver: zodResolver(contactFormSchema),
   });
 
-  function sendEmail(data) {
+  function sendEmail(data: Data) {
     if (import.meta.env.DEV) {
       // ===== INÍCIO DOS GATILHOS DE TESTE =====
 
@@ -104,7 +111,6 @@ export default function Contact() {
                   </label>
                   <input
                     type="text"
-                    name="firstName"
                     id="firstName"
                     className="form-box flex w-full"
                     {...register("firstName")}
@@ -124,7 +130,6 @@ export default function Contact() {
                   </label>
                   <input
                     type="text"
-                    name="lastName"
                     id="lastName"
                     className="form-box flex w-full"
                     {...register("lastName")}
@@ -146,7 +151,6 @@ export default function Contact() {
                 <input
                   className="form-box flex w-full"
                   type="email"
-                  name="email"
                   id="email"
                   {...register("email")}
                 />
@@ -164,7 +168,6 @@ export default function Contact() {
                   Mensagem
                 </label>
                 <textarea
-                  name="message"
                   id="message"
                   className="form-box flex max-h-28 w-full resize-y md:max-h-40 md:min-h-28 xl:min-h-36 xl:max-h-60"
                   {...register("message")}
