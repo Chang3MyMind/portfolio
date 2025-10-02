@@ -1,7 +1,13 @@
-import { useState, useEffect } from "react";
-import { NotificationContext } from "./NotificationContext";
+import React, { useState, useEffect } from "react";
+import { NotificationContext } from "./NotificationContext.js";
 
-export default function NotificationProvider({ children }) {
+type NotificationProviderProps = {
+  children: React.ReactNode;
+};
+
+export default function NotificationProvider({
+  children,
+}: NotificationProviderProps) {
   const [notification, setNotification] = useState({
     visible: false,
     title: "",
