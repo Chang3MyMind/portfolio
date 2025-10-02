@@ -1,6 +1,6 @@
 import React, { createContext } from "react";
 
-type NotificationContextType = {
+export type NotificationContextType = {
   notification: {
     visible: boolean;
     title: string;
