@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 type WindowSize = {
-  width: number | undefined;
+  width: number;
   height: number | undefined;
 };
 
