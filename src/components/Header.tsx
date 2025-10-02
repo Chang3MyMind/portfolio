@@ -1,9 +1,13 @@
 import { useState, useRef } from "react";
 import useOnClickOutside from "../hooks/useOnClickOutside";
 
-function Header({ onToggleTheme }) {
+type ToggleTheme = {
+  onToggleTheme: () => void;
+};
+
+function Header({ onToggleTheme }: ToggleTheme) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const menuRef = useRef(null);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   useOnClickOutside(menuRef, () => setIsMenuOpen(false));
 

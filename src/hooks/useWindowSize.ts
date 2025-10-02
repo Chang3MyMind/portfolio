@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
 
-function useWindowSize() {
+type WindowSize = {
+  width: number;
+  height: number | undefined;
+};
+
+function useWindowSize(): WindowSize {
   // Inicia o estado com a largura e altura da janela
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,

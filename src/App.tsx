@@ -10,7 +10,6 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 import { NotificationContext } from "./context/NotificationContext";
-import NotificationProvider from "./context/NotificationProvider";
 
 function App() {
   const { notification } = useContext(NotificationContext);

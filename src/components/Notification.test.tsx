@@ -1,6 +1,9 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
-import { NotificationContext } from "../context/NotificationContext";
+import {
+  NotificationContext,
+  NotificationContextType,
+} from "../context/NotificationContext";
 
 import Notification from "./Notification";
 import userEvent from "@testing-library/user-event";
@@ -13,9 +16,11 @@ describe("Notification", () => {
     disconnect: () => null,
   });
 
-  const renderNotificationComponent = (value) => {
+  const renderNotificationComponent = (
+    value: Partial<NotificationContextType>
+  ) => {
     return (
-      <NotificationContext.Provider value={value}>
+      <NotificationContext.Provider value={value as NotificationContextType}>
         <Notification />
       </NotificationContext.Provider>
     );
@@ -33,8 +38,7 @@ describe("Notification", () => {
     render(renderNotificationComponent({ notification: mockNotification }));
 
     const textElement = screen.getByText(
-      /Ocorreu um erro ao enviar o email, tente novamente mais tarde./,
-      /Falha ao enviar o e-mail./
+      /Ocorreu um erro ao enviar o email, tente novamente mais tarde./
     );
 
     expect(textElement).toBeInTheDocument();
@@ -42,6 +46,7 @@ describe("Notification", () => {
 
   it("should render a close button when type is 'error'", async () => {
     const mockNotification = {
+      visible: true,
       type: "error",
       title: "Título do Erro",
       message: "Mensagem do Erro",
@@ -63,6 +68,7 @@ describe("Notification", () => {
 
   it(" Should not render a close button when type is 'send'", () => {
     const mockNotification = {
+      visible: true,
       type: "send",
       title: "Título de Sucesso",
       message: "Mensagem de Sucesso",
