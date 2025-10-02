@@ -1,4 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+
 import {
   faHtml5,
   faCss3,
@@ -7,7 +9,20 @@ import {
   faNodeJs,
 } from "@fortawesome/free-brands-svg-icons";
 
-const iconMap = {
+type FontAwesomeIconType = {
+  type: "fa";
+  icon: IconDefinition;
+  color: string;
+};
+
+type ImageIconType = {
+  type: "img";
+  src: string;
+};
+
+type IconMapValue = FontAwesomeIconType | ImageIconType;
+
+const iconMap: Record<string, IconMapValue> = {
   HTML: { type: "fa", icon: faHtml5, color: "#E34F26" },
   CSS: { type: "fa", icon: faCss3, color: "#1572B6" },
   JavaScript: { type: "fa", icon: faJs, color: "#F7DF1E" },
@@ -17,7 +32,11 @@ const iconMap = {
   Vite: { type: "img", src: "/img/vite.svg" },
 };
 
-function TechnologyIcon({ technology }) {
+type TechnologyIconProps = {
+  technology: keyof typeof iconMap;
+};
+
+export default function TechnologyIcon({ technology }: TechnologyIconProps) {
   const tech = iconMap[technology];
 
   if (!tech) {
@@ -42,5 +61,3 @@ function TechnologyIcon({ technology }) {
     />
   );
 }
-
-export default TechnologyIcon;
