@@ -1,4 +1,9 @@
-function SkillBar({ name, value }) {
+type SkillBarResponse = {
+  name: string;
+  value: number;
+};
+
+export default function SkillBar({ name, value }: SkillBarResponse) {
   return (
     <div>
       <div>
@@ -8,13 +13,11 @@ function SkillBar({ name, value }) {
         className="progress-bar"
         role="progressbar"
         aria-valuenow={value}
-        aria-valuemin="0"
-        aria-valuemax="100"
+        aria-valuemin={0}
+        aria-valuemax={100}
       >
         <div className="slider" style={{ width: `${value}%` }}></div>
       </div>
     </div>
   );
 }
-
-export default SkillBar;
