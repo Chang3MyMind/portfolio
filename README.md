@@ -44,6 +44,7 @@ O projeto foi construído utilizando as seguintes tecnologias:
   - [**React.js**](https://react.dev/) (com Hooks)
   - [**Vite**](https://vitejs.dev/)
   - [**Tailwind CSS**](https://tailwindcss.com/)
+  - [**TypeScript**](https://www.typescriptlang.org)
   - [**EmailJS**](https://www.emailjs.com/)
   - [**Typewriter Effect**](https://www.npmjs.com/package/typewriter-effect)
   - [**Font Awesome**](https://fontawesome.com/)
