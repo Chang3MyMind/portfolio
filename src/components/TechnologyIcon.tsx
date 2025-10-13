@@ -30,6 +30,9 @@ const iconMap: Record<string, IconMapValue> = {
   NodeJs: { type: "fa", icon: faNodeJs, color: "#339933" },
   Tailwind: { type: "img", src: "/img/tailwindIcon.svg" },
   Vite: { type: "img", src: "/img/vite.svg" },
+  TypeScript: { type: "img", src: "/img/typeScriptIcon.svg" },
+  NextJs: { type: "img", src: "/img/nextJsIcon.svg" },
+  Zod: { type: "img", src: "/img/Zod.svg" },
 };
 
 type TechnologyIconProps = {
