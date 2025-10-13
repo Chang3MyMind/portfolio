@@ -52,7 +52,7 @@ const projects = [
 function Projects() {
   const { width } = useWindowSize();
 
-  const threshold = width < 1024 ? 0.15 : 0.5;
+  const threshold = width < 1024 ? 0.15 : 0.4;
 
   const [ref, isIntersecting] = useIntersectionObserver({ threshold });
 
