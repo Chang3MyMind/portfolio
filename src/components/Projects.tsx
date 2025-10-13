@@ -33,7 +33,13 @@ const projects = [
     image: "/img/gerenciadorFinancas.png",
     link: "https://github.com/Chang3MyMind/Gerenciador-de-financas",
   },
-
+  {
+    id: 5,
+    name: "Cartão de Visitas Digital",
+    technologies: ["NextJs", "TypeScript", "React", "Tailwind", "Zod"],
+    image: "/img/cartaoDeVisitas.png",
+    link: "https://github.com/Chang3MyMind/Cartao-de-Vistas-Digital",
+  },
   /* Template{
     id: 5,
     name: "Portfólio Pessoal",
@@ -46,7 +52,7 @@ const projects = [
 function Projects() {
   const { width } = useWindowSize();
 
-  const threshold = width < 1024 ? 0.15 : 0.5;
+  const threshold = width < 1024 ? 0.15 : 0.4;
 
   const [ref, isIntersecting] = useIntersectionObserver({ threshold });
 
