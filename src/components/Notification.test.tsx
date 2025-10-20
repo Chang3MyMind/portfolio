@@ -1,4 +1,5 @@
-import { render, screen } from "@testing-library/react";
+import React, { ReactElement } from "react";
+import { render, RenderOptions, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import {
   NotificationContext,
@@ -8,25 +9,39 @@ import {
 import Notification from "./Notification";
 import userEvent from "@testing-library/user-event";
 
+const AllTheProviders = ({
+  children,
+  value,
+}: {
+  children: React.ReactNode;
+  value: Partial<NotificationContextType>;
+}) => {
+  return (
+    <NotificationContext.Provider value={value as NotificationContextType}>
+      {children}
+    </NotificationContext.Provider>
+  );
+};
+
+const customRender = (
+  ui: ReactElement,
+  {
+    providerProps,
+    ...renderOptions
+  }: { providerProps: Partial<NotificationContextType> } & Omit<
+    RenderOptions,
+    "wrapper"
+  >
+) => {
+  const Wrapper = ({ children }: { children: React.ReactNode }) => (
+    <AllTheProviders value={providerProps}>{children}</AllTheProviders>
+  );
+
+  return render(ui, { wrapper: Wrapper, ...renderOptions });
+};
+
+// Inicio do teste
 describe("Notification", () => {
-  const MockIntersectionObserver = vi.fn();
-  MockIntersectionObserver.mockReturnValue({
-    observe: () => null,
-    unobserve: () => null,
-    disconnect: () => null,
-  });
-
-  const renderNotificationComponent = (
-    value: Partial<NotificationContextType>
-  ) => {
-    return (
-      <NotificationContext.Provider value={value as NotificationContextType}>
-        <Notification />
-      </NotificationContext.Provider>
-    );
-  };
-
-  window.IntersectionObserver = MockIntersectionObserver;
   it("The error text should appear", () => {
     const mockNotification = {
       visible: true,
@@ -35,7 +50,11 @@ describe("Notification", () => {
       type: "error",
     };
 
-    render(renderNotificationComponent({ notification: mockNotification }));
+    customRender(<Notification />, {
+      providerProps: {
+        notification: mockNotification,
+      },
+    });
 
     const textElement = screen.getByText(
       /Ocorreu um erro ao enviar o email, tente novamente mais tarde./
@@ -53,12 +72,12 @@ describe("Notification", () => {
     };
     const mockOnClose = vi.fn();
 
-    render(
-      renderNotificationComponent({
+    customRender(<Notification />, {
+      providerProps: {
         notification: mockNotification,
         onClose: mockOnClose,
-      })
-    );
+      },
+    });
 
     const closeButton = screen.getByRole("button", { name: /fechar/i });
     await userEvent.click(closeButton);
@@ -74,7 +93,11 @@ describe("Notification", () => {
       message: "Mensagem de Sucesso",
     };
 
-    render(renderNotificationComponent({ notification: mockNotification }));
+    customRender(<Notification />, {
+      providerProps: {
+        notification: mockNotification,
+      },
+    });
 
     const closeButton = screen.queryByRole("button", { name: /Fechar/i });
 
