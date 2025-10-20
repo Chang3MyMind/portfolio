@@ -33,33 +33,6 @@ export default function Contact() {
   });
 
   function sendEmail(data: Data) {
-    if (import.meta.env.DEV) {
-      // ===== INÍCIO DOS GATILHOS DE TESTE =====
-
-      // Gatilho de Erro
-      if (data.firstName.toLowerCase() === "erro") {
-        console.log("Forçando estado de ERRO para teste...");
-        setErrorModal();
-        return; // Para a execução aqui
-      }
-
-      // Gatilho de Sucesso
-      if (data.firstName.toLowerCase() === "sucesso") {
-        console.log("Forçando estado de SUCESSO para teste...");
-        setIsSubmitting(true);
-
-        // um setTimeout para simular o tempo de espera da rede
-        setTimeout(() => {
-          setSendModal();
-          reset();
-          setIsSubmitting(false);
-        }, 2000);
-
-        return; // Para a execução aqui
-      }
-      // ===== FIM DOS GATILHOS DE TESTE =====
-    }
-
     setIsSubmitting(true);
 
     const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
