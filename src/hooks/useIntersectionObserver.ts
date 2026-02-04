@@ -3,7 +3,7 @@ import { useState, useRef, useEffect, type RefObject } from "react";
 type ObserverResponse<T> = [RefObject<T | null>, boolean];
 
 export default function useIntersectionObserver<T extends HTMLElement>(
-  options?: IntersectionObserverInit
+  options?: IntersectionObserverInit,
 ): ObserverResponse<T> {
   const [isIntersecting, setIsIntersecting] = useState(false);
   const ref = useRef<T | null>(null);
