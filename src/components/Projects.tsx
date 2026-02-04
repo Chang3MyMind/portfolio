@@ -67,13 +67,11 @@ function Projects() {
       <div className="section-content">
         <h2 className="section-title">Projetos</h2>
         <div className="flex flex-col gap-y-5 md:col-span-10 lg:grid-cols-10 lg:grid-rows-2 lg:gap-x-5 lg:gap-y-10 lg:grid">
-          {projects.map((project, index) => {
-            const colStart = index % 2 === 0 ? 1 : 6;
-            const rowStart = Math.floor(index / 2) + 1;
+          {projects.map((project) => {
             return (
               <div
                 key={project.id}
-                className={`m-3 lg:col-span-5 lg:m-0 lg:h-fit lg:col-start-${colStart} lg:row-start-${rowStart}`}
+                className={`m-3 lg:col-span-5 lg:m-0 lg:h-fit lg:grid lg:grid-rows-[auto_auto_auto] lg:gap-2`}
               >
                 <h3 className="color-text font-medium md:text-lg lg:text-xl">
                   {project.name}

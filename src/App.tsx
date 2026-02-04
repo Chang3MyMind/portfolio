@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 
 import Notification from "./components/Notification";
 import Header from "./components/Header";
@@ -10,23 +10,12 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 import { NotificationContext } from "./context/NotificationContext";
+import { useTheme } from "./hooks/useTheme";
 
 function App() {
   const { notification } = useContext(NotificationContext);
 
-  const [theme, setTheme] = useState("light");
-
-  useEffect(() => {
-    if (theme === "dark") {
-      document.body.classList.add("dark");
-    } else {
-      document.body.classList.remove("dark");
-    }
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
-  };
+  const { toggleTheme } = useTheme();
 
   return (
     <>
