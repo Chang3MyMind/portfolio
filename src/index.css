@@ -60,7 +60,7 @@
   /* Animations */
 
   .btn-trsp-hover {
-    @apply hover:border-0 hover:bg-gradient-to-r hover:from-primary hover:to-secondary hover:p-2 hover:dark:from-primary-dark hover:dark:to-secondary-dark;
+    @apply hover:border-0 hover:bg-gradient-to-r hover:from-primary hover:to-secondary hover:p-2 dark:hover:from-primary-dark dark:hover:to-secondary-dark;
   }
 
   /* Show and hidden */

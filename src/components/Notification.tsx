@@ -8,7 +8,7 @@ export default function Notification() {
 
   return (
     <div className=" z-50 fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="bg-background dark:bg-background-dark p-6  rounded-lg shadow-2x relative">
+      <div className="bg-background dark:bg-background-dark p-6  rounded-lg shadow-2xl relative">
         {notification.type === "error" ? (
           <button
             aria-label="Fechar"
