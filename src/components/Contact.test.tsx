@@ -6,35 +6,31 @@ import Contact from "./Contact";
 import Notification from "./Notification";
 import NotificationProvider from "../context/NotificationProvider";
 
-// --- SETUP DE MOCKS (A Troca de Elenco) ---
+// --- SETUP DE MOCKS  ---
 
-// Mock do hook de visibilidade. Padrão que já estabelecemos.
 vi.mock("../hooks/useIntersectionObserver", () => ({
   default: () => [null, true],
 }));
 
-// Mock do EmailJS. Ele deve retornar uma Promise.
+// Mock do emailjs para evitar chamadas reais à API.
 vi.mock("@emailjs/browser", () => ({
   default: {
-    // Para o teste de sucesso, a Promise resolve.
-    // Para o teste de erro, faremos a Promise rejeitar.
     send: vi.fn().mockResolvedValue(undefined),
   },
 }));
 
-//Para caso mudar a renderização não precisar mudar em todos
+// Função auxiliar para renderizar o componente com o provider de notificação.
 const renderContactFlow = () =>
   render(
     <NotificationProvider>
       <Notification />
       <Contact />
-    </NotificationProvider>
+    </NotificationProvider>,
   );
 
 // --- INÍCIO DOS TESTES ---
 
 describe("Contact Form", () => {
-  // Antes de cada teste, vamos garantir que o mock do emailjs esteja limpo.
   beforeEach(() => {
     vi.clearAllMocks();
   });
@@ -46,7 +42,7 @@ describe("Contact Form", () => {
 
     await waitFor(() => {
       expect(
-        screen.getByText(/O nome precisa ter no mínimo 3 caracteres./)
+        screen.getByText(/O nome precisa ter no mínimo 3 caracteres./),
       ).toBeInTheDocument();
     });
   });
@@ -56,19 +52,19 @@ describe("Contact Form", () => {
 
     await userEvent.type(
       screen.getByRole("textbox", { name: /^Nome$/i }),
-      "Usuário de Teste"
+      "Usuário de Teste",
     );
     await userEvent.type(
       screen.getByRole("textbox", { name: /Sobrenome/i }),
-      "Válido"
+      "Válido",
     );
     await userEvent.type(
       screen.getByRole("textbox", { name: /E-mail/i }),
-      "teste@email.com"
+      "teste@email.com",
     );
     await userEvent.type(
       screen.getByRole("textbox", { name: /Mensagem/i }),
-      "Esta é uma mensagem de teste válida com mais de dez caracteres."
+      "Esta é uma mensagem de teste válida com mais de dez caracteres.",
     );
     await userEvent.click(screen.getByRole("button", { name: /Enviar/i }));
 
@@ -76,7 +72,7 @@ describe("Contact Form", () => {
       expect(emailjs.send).toHaveBeenCalled();
 
       expect(
-        screen.getByText(/E-mail enviado com sucesso./i)
+        screen.getByText(/E-mail enviado com sucesso./i),
       ).toBeInTheDocument();
     });
   });
@@ -88,19 +84,19 @@ describe("Contact Form", () => {
 
     await userEvent.type(
       screen.getByRole("textbox", { name: /^Nome$/i }),
-      "Usuário de Teste"
+      "Usuário de Teste",
     );
     await userEvent.type(
       screen.getByRole("textbox", { name: /Sobrenome/i }),
-      "Válido"
+      "Válido",
     );
     await userEvent.type(
       screen.getByRole("textbox", { name: /E-mail/i }),
-      "teste@email.com"
+      "teste@email.com",
     );
     await userEvent.type(
       screen.getByRole("textbox", { name: /Mensagem/i }),
-      "Mensagem de teste."
+      "Mensagem de teste.",
     );
     await userEvent.click(screen.getByRole("button", { name: /Enviar/i }));
 
@@ -108,7 +104,7 @@ describe("Contact Form", () => {
       expect(emailjs.send).toHaveBeenCalled();
 
       expect(
-        screen.getByText(/Falha ao enviar o e-mail./i)
+        screen.getByText(/Falha ao enviar o e-mail./i),
       ).toBeInTheDocument();
     });
   });
