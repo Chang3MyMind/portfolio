@@ -16,11 +16,11 @@ export default {
         },
         // Cores para botões e gradientes
         primary: {
-          DEFAULT: "#3B82F6", // Cor principal (ex: botões no modo claro)
+          DEFAULT: "#3B82F6", // Cor principal
           dark: "#60A5FA", // Cor principal no modo escuro
         },
         secondary: {
-          DEFAULT: "#60A5FA", // Cor secundaria (ex: botões no modo escuro)
+          DEFAULT: "#60A5FA", // Cor secundaria
           dark: "#3B82F6", // Cor secundaria no modo escuro
         },
         // Cores para caixas

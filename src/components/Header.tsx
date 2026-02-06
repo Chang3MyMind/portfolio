@@ -28,7 +28,10 @@ function Header({ onToggleTheme }: ToggleTheme) {
           </a>
         </div>
 
-        <div className="hidden space-x-8 sm:flex md:text-lg xl:text-xl">
+        <div
+          // Desktop Navigation
+          className="hidden space-x-8 sm:flex md:text-lg xl:text-xl"
+        >
           <a
             className="color-text transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
             href="#hero"
@@ -59,19 +62,21 @@ function Header({ onToggleTheme }: ToggleTheme) {
           >
             Contato
           </a>
-          <a
+          <button
+            type="button"
             id="theme-toggle"
             aria-label="Toggle theme"
             className="cursor-pointer text-gradient from-[#1A2B47] via-[#2C4260] to-[#4A5B73] bg-gradient-to-r dark:from-[#FF6347] dark:via-[#FFBD99] dark:to-[#FFDAB9]"
             onClick={onToggleTheme}
           >
             Tema
-          </a>
+          </button>
         </div>
 
         <button
+          // Hamburger Menu for Mobile
           id="hamburger-menu"
-          aria-expanded="false"
+          aria-expanded={isMenuOpen}
           aria-controls="nav-overlay"
           className="text-text-color focus:outline-none sm:hidden dark:text-text-color-dark"
           onClick={toggleMenu}
@@ -83,8 +88,8 @@ function Header({ onToggleTheme }: ToggleTheme) {
             stroke="currentColor"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               strokeWidth="2"
               d="M4 6h16M4 12h10M4 18h5"
             ></path>
@@ -92,6 +97,7 @@ function Header({ onToggleTheme }: ToggleTheme) {
         </button>
 
         <div
+          // Mobile Navigation Overlay
           ref={menuRef}
           id="nav-overlay"
           className={`fixed right-0 top-0 z-[900] h-[100vh] w-48 transform ease-linear transition-transform duration-300  flex-col bg-princ-box  dark:bg-princ-box-dark md:text-lg xl:text-xl ${
@@ -145,14 +151,15 @@ function Header({ onToggleTheme }: ToggleTheme) {
               </a>
             </li>
             <li>
-              <a
+              <button
+                type="button"
                 id="mobile-theme-toggle"
                 aria-label="Toggle theme"
                 className="text-xs font-semibold text-gradient from-[#1A2B47] via-[#2C4260] to-[#4A5B73] bg-gradient-to-r dark:from-[#FF6347] dark:via-[#FFBD99] dark:to-[#FFDAB9] "
                 onClick={onToggleTheme}
               >
                 Tema
-              </a>
+              </button>
             </li>
           </ul>
         </div>

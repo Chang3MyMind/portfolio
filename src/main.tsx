@@ -9,5 +9,5 @@ createRoot(document.getElementById("root") as HTMLElement).render(
     <NotificationProvider>
       <App />
     </NotificationProvider>
-  </StrictMode>
+  </StrictMode>,
 );

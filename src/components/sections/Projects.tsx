@@ -1,53 +1,8 @@
-import TechnologyIcon from "./TechnologyIcon";
-import useIntersectionObserver from "../hooks/useIntersectionObserver";
+import TechnologyIcon from "../ui/TechnologyIcon";
+import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 
-import useWindowSize from "../hooks/useWindowSize";
-
-const projects = [
-  {
-    id: 1,
-    name: "Trilha Challenge Junior",
-    technologies: ["HTML", "Tailwind", "JavaScript"],
-    image: "/img/desafioJunior.png",
-    link: "https://github.com/Chang3MyMind/TrilhaChallengeJunior",
-  },
-  {
-    id: 2,
-    name: "Discord Page",
-    technologies: ["HTML", "Tailwind"],
-    image: "/img/desafioResponsividade.png",
-    link: "https://github.com/Chang3MyMind/desafio-responsividade",
-  },
-
-  {
-    id: 3,
-    name: "Portfolio (Legado)",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    image: "/img/projetoLegado.png",
-    link: "https://github.com/Chang3MyMind/chang3mymind.github.io",
-  },
-  {
-    id: 4,
-    name: "Gerenciador de Finanças",
-    technologies: ["React", "Tailwind", "JavaScript", "Vite"],
-    image: "/img/gerenciadorFinancas.png",
-    link: "https://github.com/Chang3MyMind/Gerenciador-de-financas",
-  },
-  {
-    id: 5,
-    name: "Cartão de Visitas Digital",
-    technologies: ["NextJs", "TypeScript", "React", "Tailwind", "Zod"],
-    image: "/img/cartaoDeVisitas.png",
-    link: "https://github.com/Chang3MyMind/Cartao-de-Vistas-Digital",
-  },
-  /* Template{
-    id: 5,
-    name: "Portfólio Pessoal",
-    technologies: ["HTML", "Tailwind", "JavaScript"],
-    image: "/img/Frame 16.png",
-    link: "https://github.com/seu-usuario/projeto-4",
-  },*/
-];
+import useWindowSize from "../../hooks/useWindowSize";
+import { projects } from "../../data/projects.js";
 
 function Projects() {
   const { width } = useWindowSize();
@@ -67,13 +22,11 @@ function Projects() {
       <div className="section-content">
         <h2 className="section-title">Projetos</h2>
         <div className="flex flex-col gap-y-5 md:col-span-10 lg:grid-cols-10 lg:grid-rows-2 lg:gap-x-5 lg:gap-y-10 lg:grid">
-          {projects.map((project, index) => {
-            const colStart = index % 2 === 0 ? 1 : 6;
-            const rowStart = Math.floor(index / 2) + 1;
+          {projects.map((project) => {
             return (
               <div
                 key={project.id}
-                className={`m-3 lg:col-span-5 lg:m-0 lg:h-fit lg:col-start-${colStart} lg:row-start-${rowStart}`}
+                className={`m-3 lg:col-span-5 lg:m-0 lg:h-fit lg:grid lg:grid-rows-[auto_auto_auto] lg:gap-2`}
               >
                 <h3 className="color-text font-medium md:text-lg lg:text-xl">
                   {project.name}

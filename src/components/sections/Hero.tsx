@@ -2,6 +2,15 @@ import Typewriter from "typewriter-effect";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 
+type TypewriterType = {
+  strings: string[];
+  autoStart: boolean;
+  loop: boolean;
+  delay: number;
+  wrapperClassName: string;
+  dangerouslyAllowHTML: boolean;
+};
+
 function Hero() {
   return (
     <>
@@ -25,14 +34,14 @@ function Hero() {
                   delay: 50,
                   wrapperClassName: "color-text",
                   dangerouslyAllowHTML: true,
-                } as any
+                } as TypewriterType
               }
             />
             /&gt;
           </h1>
           <div className="row-start-3 flex gap-5 p-2 md:col-span-full md:row-span-1 md:mx-auto lg:gap-10">
             <a
-              href="/Curriculo_Matheus_Mattos_FontEnd_Developer.pdf"
+              href="/CV_Matheus_Mattos_FrontEnd.pdf"
               download
               className="color-text gradient-on-bg h-fit p-3 text-xs font-medium md:text-base lg:text-lg xl:text-xl"
               type="button"

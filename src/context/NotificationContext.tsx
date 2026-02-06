@@ -6,6 +6,7 @@ export type NotificationContextType = {
     title: string;
     message: string;
     type: string;
+    modalLabel: string;
   };
 
   setNotification: React.Dispatch<
@@ -14,6 +15,7 @@ export type NotificationContextType = {
       title: string;
       message: string;
       type: string;
+      modalLabel: string;
     }>
   >;
 
