@@ -13,6 +13,7 @@ export default function NotificationProvider({
     title: "",
     message: "",
     type: "",
+    modalLabel: "",
   });
 
   function setErrorModal() {
@@ -21,6 +22,7 @@ export default function NotificationProvider({
       title: "Falha ao enviar o e-mail.",
       message: "Ocorreu um erro ao enviar o email, tente novamente mais tarde.",
       type: "error",
+      modalLabel: "Modal de erro ao enviar e-mail",
     });
   }
 
@@ -31,11 +33,18 @@ export default function NotificationProvider({
       message:
         "E-mail enviado, obrigado por entrar em contato, em breve responderemos.",
       type: "send",
+      modalLabel: "Modal de sucesso ao enviar e-mail",
     });
   }
 
   function onClose() {
-    setNotification({ visible: false, title: "", message: "", type: "" });
+    setNotification({
+      visible: false,
+      title: "",
+      message: "",
+      type: "",
+      modalLabel: "",
+    });
   }
 
   useEffect(() => {
