@@ -62,20 +62,21 @@ function Header({ onToggleTheme }: ToggleTheme) {
           >
             Contato
           </a>
-          <a
+          <button
+            type="button"
             id="theme-toggle"
             aria-label="Toggle theme"
             className="cursor-pointer text-gradient from-[#1A2B47] via-[#2C4260] to-[#4A5B73] bg-gradient-to-r dark:from-[#FF6347] dark:via-[#FFBD99] dark:to-[#FFDAB9]"
             onClick={onToggleTheme}
           >
             Tema
-          </a>
+          </button>
         </div>
 
         <button
-// Hamburger Menu for Mobile
+          // Hamburger Menu for Mobile
           id="hamburger-menu"
-          aria-expanded="false"
+          aria-expanded={isMenuOpen}
           aria-controls="nav-overlay"
           className="text-text-color focus:outline-none sm:hidden dark:text-text-color-dark"
           onClick={toggleMenu}
@@ -150,14 +151,15 @@ function Header({ onToggleTheme }: ToggleTheme) {
               </a>
             </li>
             <li>
-              <a
+              <button
+                type="button"
                 id="mobile-theme-toggle"
                 aria-label="Toggle theme"
                 className="text-xs font-semibold text-gradient from-[#1A2B47] via-[#2C4260] to-[#4A5B73] bg-gradient-to-r dark:from-[#FF6347] dark:via-[#FFBD99] dark:to-[#FFDAB9] "
                 onClick={onToggleTheme}
               >
                 Tema
-              </a>
+              </button>
             </li>
           </ul>
         </div>
