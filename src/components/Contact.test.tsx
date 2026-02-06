@@ -2,8 +2,8 @@ import emailjs from "@emailjs/browser";
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import Contact from "./Contact";
-import Notification from "./Notification";
+import Contact from "./sections/Contact";
+import Notification from "./ui/Notification";
 import NotificationProvider from "../context/NotificationProvider";
 
 // --- SETUP DE MOCKS  ---

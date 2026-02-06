@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
-import Skills from "./Skills";
+import Skills from "./sections/Skills";
 
 vi.mock("../hooks/useIntersectionObserver", () => ({
   default: () => [null, true],

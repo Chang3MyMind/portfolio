@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useContext, useEffect } from "react";
-import { NotificationContext } from "../context/NotificationContext.js";
+import { NotificationContext } from "../../context/NotificationContext";
 
 export default function Notification() {
   const { notification, onClose } = useContext(NotificationContext);

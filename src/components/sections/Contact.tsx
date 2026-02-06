@@ -2,13 +2,13 @@ import emailjs from "@emailjs/browser";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { useContext, useState } from "react";
-import useIntersectionObserver from "../hooks/useIntersectionObserver";
+import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { contactFormSchema } from "../schemas/contactFormSchema";
-import { NotificationContext } from "../context/NotificationContext";
+import { contactFormSchema } from "../../schemas/contactFormSchema";
+import { NotificationContext } from "../../context/NotificationContext.js";
 
 type Data = {
   firstName: string;

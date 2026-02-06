@@ -32,7 +32,7 @@ function Hero() {
           </h1>
           <div className="row-start-3 flex gap-5 p-2 md:col-span-full md:row-span-1 md:mx-auto lg:gap-10">
             <a
-              href="/Curriculo_Matheus_Mattos_FontEnd_Developer.pdf"
+              href="/CV_Matheus_Mattos_FrontEnd.pdf"
               download
               className="color-text gradient-on-bg h-fit p-3 text-xs font-medium md:text-base lg:text-lg xl:text-xl"
               type="button"

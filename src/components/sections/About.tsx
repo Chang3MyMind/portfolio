@@ -1,4 +1,4 @@
-import useIntersectionObserver from "../hooks/useIntersectionObserver.js";
+import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 
 function About() {
   const [ref, isIntersecting] = useIntersectionObserver({ threshold: 0.5 });

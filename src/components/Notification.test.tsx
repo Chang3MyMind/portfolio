@@ -6,7 +6,7 @@ import {
   NotificationContextType,
 } from "../context/NotificationContext";
 
-import Notification from "./Notification";
+import Notification from "./ui/Notification";
 import userEvent from "@testing-library/user-event";
 
 const AllTheProviders = ({
