@@ -2,6 +2,15 @@ import Typewriter from "typewriter-effect";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 
+type TypewriterType = {
+  strings: string[];
+  autoStart: boolean;
+  loop: boolean;
+  delay: number;
+  wrapperClassName: string;
+  dangerouslyAllowHTML: boolean;
+};
+
 function Hero() {
   return (
     <>
@@ -25,7 +34,7 @@ function Hero() {
                   delay: 50,
                   wrapperClassName: "color-text",
                   dangerouslyAllowHTML: true,
-                } as any
+                } as TypewriterType
               }
             />
             /&gt;
