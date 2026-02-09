@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, type RefObject } from "react";
+import { useState, useRef, useEffect, useMemo, type RefObject } from "react";
 
 type ObserverResponse<T> = [RefObject<T | null>, boolean];
 
@@ -8,29 +8,32 @@ export default function useIntersectionObserver<T extends HTMLElement>(
   const [isIntersecting, setIsIntersecting] = useState(false);
   const ref = useRef<T | null>(null);
 
+  const memoizedOptions = useMemo(
+    () => ({
+      root: options?.root,
+      rootMargin: options?.rootMargin,
+      threshold: options?.threshold,
+    }),
+    [options?.root, options?.rootMargin, options?.threshold],
+  );
   useEffect(() => {
     const element = ref.current;
 
+    if (!element) return;
+
     const callback = (entries: IntersectionObserverEntry[]) => {
       const entry = entries[0];
-
-      if (entry) {
-        setIsIntersecting(entry.isIntersecting);
-      }
+      setIsIntersecting(entry.isIntersecting);
     };
 
-    const observer = new IntersectionObserver(callback, options);
+    const observer = new IntersectionObserver(callback, memoizedOptions);
 
-    if (element) {
-      observer.observe(element);
-    }
+    observer.observe(element);
 
     return () => {
-      if (element) {
-        observer.unobserve(element);
-      }
+      observer.disconnect();
     };
-  }, [options]);
+  }, [memoizedOptions]);
 
   return [ref, isIntersecting];
 }
