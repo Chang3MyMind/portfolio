@@ -52,6 +52,7 @@ function Hero() {
               className="text-2xl text-background-dark md:text-4xl dark:text-background xl:text-[42px]"
               href="https://www.linkedin.com/in/matheusmattos4"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <FontAwesomeIcon icon={faLinkedin} />
               <span className="sr-only">Perfil do LinkedIn</span>
@@ -60,6 +61,7 @@ function Hero() {
               className="text-2xl text-background-dark md:text-4xl dark:text-background xl:text-[42px]"
               href="https://github.com/Chang3MyMind"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <FontAwesomeIcon icon={faGithub} />
               <span className="sr-only">Perfil do GitHub</span>

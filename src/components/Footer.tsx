@@ -12,6 +12,7 @@ function Footer() {
         <a
           className="footer-icon"
           target="_blank"
+          rel="noopener noreferrer"
           href="https://www.linkedin.com/in/matheusmattos4"
           aria-label="Link para o meu perfil do Linkedin"
         >
@@ -20,6 +21,7 @@ function Footer() {
         <a
           className="footer-icon"
           target="_blank"
+          rel="noopener noreferrer"
           href="https://github.com/Chang3MyMind"
           aria-label="Link para o meu perfil do Github"
         >
@@ -28,6 +30,7 @@ function Footer() {
         <a
           className="footer-icon"
           target="_blank"
+          rel="noopener noreferrer"
           href="https://www.instagram.com/m4theus_m4ttos"
           aria-label="Link para o meu perfil do Instagram"
         >
