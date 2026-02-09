@@ -19,24 +19,27 @@ function Hero() {
           Olá, sou Matheus Mattos. Desenvolvedor Front-End.
         </p>
         <h1 className="flex items-center justify-center gap-x-2 color-text text-center text-lg font-semibold md:col-span-full md:row-span-1 md:row-start-2 md:mx-auto md:text-3xl lg:text-4xl xl:text-5xl">
-          &lt;
-          <Typewriter
-            options={
-              {
-                strings: [
-                  'Transformando ideias em <span class="gradient-on-text">interfaces</span>.',
-                  'Soluções criativas em <span class="gradient-on-text">Front-End</span>.',
-                  'Código e design focados no <span class="gradient-on-text">usuário</span>.',
-                ],
-                autoStart: true,
-                loop: true,
-                delay: 50,
-                wrapperClassName: "color-text",
-                dangerouslyAllowHTML: true,
-              } as TypewriterType
-            }
-          />
-          /&gt;
+          <span className="sr-only">Transformando ideias em interfaces</span>
+          <span aria-hidden="true">
+            &lt;
+            <Typewriter
+              options={
+                {
+                  strings: [
+                    'Transformando ideias em <span class="gradient-on-text">interfaces</span>.',
+                    'Soluções criativas em <span class="gradient-on-text">Front-End</span>.',
+                    'Código e design focados no <span class="gradient-on-text">usuário</span>.',
+                  ],
+                  autoStart: true,
+                  loop: true,
+                  delay: 50,
+                  wrapperClassName: "color-text",
+                  dangerouslyAllowHTML: true,
+                } as TypewriterType
+              }
+            />
+            /&gt;
+          </span>
         </h1>
         <div className="row-start-3 flex gap-5 p-2 md:col-span-full md:row-span-1 md:mx-auto lg:gap-10">
           <a
