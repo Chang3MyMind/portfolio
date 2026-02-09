@@ -1,6 +1,8 @@
 import { useState, useRef } from "react";
 import useOnClickOutside from "../hooks/useOnClickOutside";
 
+import { navItems } from "../data/NavItens";
+
 type ToggleTheme = {
   onToggleTheme: () => void;
 };
@@ -32,36 +34,16 @@ function Header({ onToggleTheme }: ToggleTheme) {
           // Desktop Navigation
           className="hidden space-x-8 sm:flex md:text-lg xl:text-xl"
         >
-          <a
-            className="color-text transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
-            href="#hero"
-          >
-            Ínicio
-          </a>
-          <a
-            className="color-text transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
-            href="#about"
-          >
-            Sobre
-          </a>
-          <a
-            className="color-text transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
-            href="#skills"
-          >
-            Habilidades
-          </a>
-          <a
-            className="color-text transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
-            href="#projects"
-          >
-            Projetos
-          </a>
-          <a
-            className="color-text transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
-            href="#contact"
-          >
-            Contato
-          </a>
+          {navItems.map((item) => (
+            <a
+              key={item.label}
+              className="color-text transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
+              href={item.href}
+            >
+              {item.label}
+            </a>
+          ))}
+
           <button
             type="button"
             id="theme-toggle"
@@ -105,51 +87,19 @@ function Header({ onToggleTheme }: ToggleTheme) {
           }`}
         >
           <ul className="mt-16 flex flex-col items-start space-y-4 p-4">
-            <li>
-              <a
-                className="color-text text-xs font-semibold transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
-                href="#hero"
-                onClick={toggleMenu}
-              >
-                Ínicio
-              </a>
-            </li>
-            <li>
-              <a
-                className="color-text text-xs font-semibold transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
-                href="#about"
-                onClick={toggleMenu}
-              >
-                Sobre
-              </a>
-            </li>
-            <li>
-              <a
-                className="color-text text-xs font-semibold transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
-                href="#skills"
-                onClick={toggleMenu}
-              >
-                Habilidades
-              </a>
-            </li>
-            <li>
-              <a
-                className="color-text text-xs font-semibold transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
-                href="#projects"
-                onClick={toggleMenu}
-              >
-                Projetos
-              </a>
-            </li>
-            <li>
-              <a
-                className="color-text text-xs font-semibold transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
-                href="#contact"
-                onClick={toggleMenu}
-              >
-                Contato
-              </a>
-            </li>
+            {navItems.map((item) => (
+              <li>
+                <a
+                  key={item.label}
+                  className="color-text text-xs font-semibold transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
+                  href={item.href}
+                  onClick={toggleMenu}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+
             <li>
               <button
                 type="button"
