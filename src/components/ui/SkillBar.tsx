@@ -1,9 +1,10 @@
 type SkillBarResponse = {
   name: string;
   value: number;
+  ariaLabel: string;
 };
 
-export default function SkillBar({ name, value }: SkillBarResponse) {
+export default function SkillBar({ name, value, ariaLabel }: SkillBarResponse) {
   return (
     <div>
       <div>
@@ -15,6 +16,7 @@ export default function SkillBar({ name, value }: SkillBarResponse) {
         aria-valuenow={value}
         aria-valuemin={0}
         aria-valuemax={100}
+        aria-label={ariaLabel}
       >
         <div className="slider" style={{ width: `${value}%` }}></div>
       </div>
