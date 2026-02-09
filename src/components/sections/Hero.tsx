@@ -19,8 +19,8 @@ function Hero() {
           Olá, sou Matheus Mattos. Desenvolvedor Front-End.
         </p>
         <h1 className="flex items-center justify-center gap-x-2 color-text text-center text-lg font-semibold md:col-span-full md:row-span-1 md:row-start-2 md:mx-auto md:text-3xl lg:text-4xl xl:text-5xl">
-          <span className="sr-only">Transformando ideias em interfaces</span>
-          <span aria-hidden="true">
+          <span className="sr-only">Olá, eu sou Matheus Mattos</span>
+          <span className="contents" aria-hidden="true">
             &lt;
             <Typewriter
               options={
