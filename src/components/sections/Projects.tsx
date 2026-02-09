@@ -28,9 +28,9 @@ function Projects() {
                 key={project.id}
                 className={`m-3 lg:col-span-5 lg:m-0 lg:h-fit lg:grid lg:grid-rows-[auto_auto_auto] lg:gap-2`}
               >
-                <h3 className="color-text font-medium md:text-lg lg:text-xl">
+                <p className="color-text font-medium md:text-lg lg:text-xl">
                   {project.name}
-                </h3>
+                </p>
                 <a
                   aria-label={`link to project ${project.name}`}
                   href={project.link}

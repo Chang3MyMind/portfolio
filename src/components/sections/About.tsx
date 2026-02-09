@@ -22,13 +22,13 @@ function About() {
             />
           </div>
           <div className="my-auto">
-            <h3 className="color-text text-justify text-sm font-medium md:text-base lg:text-lg xl:text-xl">
+            <p className="color-text text-justify text-sm font-medium md:text-base lg:text-lg xl:text-xl">
               Olá! Eu sou o Matheus Mattos, um Desenvolvedor Front-End
               apaixonado por criar interfaces responsivas e acessíveis. Sou
               especializado em HTML5, CSS3 e JavaScript moderno (ES6+).
               Atualmente, meu foco é construir projetos para meu portfólio que
               demonstrem minhas habilidades com código limpo e escalável.
-            </h3>
+            </p>
           </div>
         </div>
       </div>

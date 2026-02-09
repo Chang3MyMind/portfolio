@@ -41,9 +41,9 @@ function Footer() {
         </a>
       </div>
       <div className="flex items-center justify-center gap-x-8">
-        <h3 className="text-center text-base font-medium text-text-color-dark md:text-lg dark:text-text-color">
+        <p className="text-center text-base font-medium text-text-color-dark md:text-lg dark:text-text-color">
           &copy; 2025 Matheus Mattos. Todos os direitos reservados.
-        </h3>
+        </p>
       </div>
     </footer>
   );

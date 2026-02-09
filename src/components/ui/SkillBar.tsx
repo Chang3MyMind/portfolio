@@ -8,7 +8,7 @@ export default function SkillBar({ name, value, ariaLabel }: SkillBarResponse) {
   return (
     <div>
       <div>
-        <h3 className="color-text text-sm md:text-base">{name}</h3>
+        <p className="color-text text-sm md:text-base">{name}</p>
       </div>
       <div
         className="progress-bar"
