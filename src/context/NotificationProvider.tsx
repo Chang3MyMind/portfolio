@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NotificationContext } from "./NotificationContext.js";
+import { NotificationContext } from "./NotificationContext";
 
 type NotificationProviderProps = {
   children: React.ReactNode;
