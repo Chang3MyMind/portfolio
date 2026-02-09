@@ -7,7 +7,7 @@ import {
 
 function Footer() {
   return (
-    <>
+    <footer>
       <div className="mb-3 flex items-center justify-center gap-x-8">
         <a
           className="footer-icon"
@@ -45,7 +45,7 @@ function Footer() {
           &copy; 2025 Matheus Mattos. Todos os direitos reservados.
         </h3>
       </div>
-    </>
+    </footer>
   );
 }
 

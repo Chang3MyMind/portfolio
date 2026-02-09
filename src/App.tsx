@@ -18,22 +18,20 @@ function App() {
   const { toggleTheme } = useTheme();
 
   return (
-    <>
-      <div className="flex flex-col min-h-screen bg-background dark:bg-background-dark transition-transform ease-out duration-300">
+    <div className="flex flex-col min-h-screen bg-background dark:bg-background-dark transition-transform ease-out duration-300">
       {notification.visible && <Notification />}
-        <header className=" sticky top-0 z-10 bg-white shadow-md dark:bg-princ-box-dark">
-          <Header onToggleTheme={toggleTheme} />
-        </header>
+      <header className=" sticky top-0 z-10 bg-white shadow-md dark:bg-princ-box-dark">
+        <Header onToggleTheme={toggleTheme} />
+      </header>
 
-        <main className="flex-grow space-y-16 md:space-y-28 lg:space-y-40 py-16 md:py-28 xl:py-36">
-          <Hero /> <About /> <Skills /> <Projects /> <Contact />
-        </main>
+      <main className="flex-grow space-y-16 md:space-y-28 lg:space-y-40 py-16 md:py-28 xl:py-36">
+        <Hero /> <About /> <Skills /> <Projects /> <Contact />
+      </main>
 
-        <footer className="flex flex-col bg-background-dark pb-7 pt-7 dark:bg-background">
-          <Footer />
-        </footer>
-      </div>
-    </>
+      <footer className="flex flex-col bg-background-dark pb-7 pt-7 dark:bg-background">
+        <Footer />
+      </footer>
+    </div>
   );
 }
 
