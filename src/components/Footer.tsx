@@ -7,11 +7,12 @@ import {
 
 function Footer() {
   return (
-    <>
+    <footer>
       <div className="mb-3 flex items-center justify-center gap-x-8">
         <a
           className="footer-icon"
           target="_blank"
+          rel="noopener noreferrer"
           href="https://www.linkedin.com/in/matheusmattos4"
           aria-label="Link para o meu perfil do Linkedin"
         >
@@ -20,6 +21,7 @@ function Footer() {
         <a
           className="footer-icon"
           target="_blank"
+          rel="noopener noreferrer"
           href="https://github.com/Chang3MyMind"
           aria-label="Link para o meu perfil do Github"
         >
@@ -28,6 +30,7 @@ function Footer() {
         <a
           className="footer-icon"
           target="_blank"
+          rel="noopener noreferrer"
           href="https://www.instagram.com/m4theus_m4ttos"
           aria-label="Link para o meu perfil do Instagram"
         >
@@ -38,11 +41,11 @@ function Footer() {
         </a>
       </div>
       <div className="flex items-center justify-center gap-x-8">
-        <h3 className="text-center text-base font-medium text-text-color-dark md:text-lg dark:text-text-color">
+        <p className="text-center text-base font-medium text-text-color-dark md:text-lg dark:text-text-color">
           &copy; 2025 Matheus Mattos. Todos os direitos reservados.
-        </h3>
+        </p>
       </div>
-    </>
+    </footer>
   );
 }
 

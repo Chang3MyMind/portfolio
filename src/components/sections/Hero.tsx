@@ -13,13 +13,14 @@ type TypewriterType = {
 
 function Hero() {
   return (
-    <>
-      <section id="hero" className="sections-container scroll-mt-36">
-        <div className="section-content md:grid-rows-3 lg:gap-y-10">
-          <p className="color-text text-center text-xs font-normal md:col-span-full md:row-span-1 md:row-start-1 md:mx-auto md:text-base lg:text-lg xl:text-xl">
-            Olá, sou Matheus Mattos. Desenvolvedor Front-End.
-          </p>
-          <h1 className="flex items-center justify-center gap-x-2 color-text text-center text-lg font-semibold md:col-span-full md:row-span-1 md:row-start-2 md:mx-auto md:text-3xl lg:text-4xl xl:text-5xl">
+    <section id="hero" className="sections-container scroll-mt-36">
+      <div className="section-content md:grid-rows-3 lg:gap-y-10">
+        <p className="color-text text-center text-xs font-normal md:col-span-full md:row-span-1 md:row-start-1 md:mx-auto md:text-base lg:text-lg xl:text-xl">
+          Olá, sou Matheus Mattos. Desenvolvedor Front-End.
+        </p>
+        <h1 className="flex items-center justify-center gap-x-2 color-text text-center text-lg font-semibold md:col-span-full md:row-span-1 md:row-start-2 md:mx-auto md:text-3xl lg:text-4xl xl:text-5xl">
+          <span className="sr-only">Olá, eu sou Matheus Mattos</span>
+          <span className="contents" aria-hidden="true">
             &lt;
             <Typewriter
               options={
@@ -38,43 +39,45 @@ function Hero() {
               }
             />
             /&gt;
-          </h1>
-          <div className="row-start-3 flex gap-5 p-2 md:col-span-full md:row-span-1 md:mx-auto lg:gap-10">
-            <a
-              href="/CV_Matheus_Mattos_FrontEnd.pdf"
-              download
-              className="color-text gradient-on-bg h-fit p-3 text-xs font-medium md:text-base lg:text-lg xl:text-xl"
-              type="button"
-            >
-              Download CV
-            </a>
-            <a
-              className="text-2xl text-background-dark md:text-4xl dark:text-background xl:text-[42px]"
-              href="https://www.linkedin.com/in/matheusmattos4"
-              target="_blank"
-            >
-              <FontAwesomeIcon icon={faLinkedin} />
-              <span className="sr-only">Perfil do LinkedIn</span>
-            </a>
-            <a
-              className="text-2xl text-background-dark md:text-4xl dark:text-background xl:text-[42px]"
-              href="https://github.com/Chang3MyMind"
-              target="_blank"
-            >
-              <FontAwesomeIcon icon={faGithub} />
-              <span className="sr-only">Perfil do GitHub</span>
-            </a>
-            <a
-              href="#contact"
-              className="color-text gradient-on-bg h-fit p-3 text-xs font-medium md:text-base lg:text-lg xl:text-xl"
-              type="button"
-            >
-              Contato
-            </a>
-          </div>
+          </span>
+        </h1>
+        <div className="row-start-3 flex gap-5 p-2 md:col-span-full md:row-span-1 md:mx-auto lg:gap-10">
+          <a
+            href="/CV_Matheus_Mattos_FrontEnd.pdf"
+            download
+            className="color-text gradient-on-bg h-fit p-3 text-xs font-medium md:text-base lg:text-lg xl:text-xl"
+            type="button"
+          >
+            Download CV
+          </a>
+          <a
+            className="text-2xl text-background-dark md:text-4xl dark:text-background xl:text-[42px]"
+            href="https://www.linkedin.com/in/matheusmattos4"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faLinkedin} />
+            <span className="sr-only">Perfil do LinkedIn</span>
+          </a>
+          <a
+            className="text-2xl text-background-dark md:text-4xl dark:text-background xl:text-[42px]"
+            href="https://github.com/Chang3MyMind"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faGithub} />
+            <span className="sr-only">Perfil do GitHub</span>
+          </a>
+          <a
+            href="#contact"
+            className="color-text gradient-on-bg h-fit p-3 text-xs font-medium md:text-base lg:text-lg xl:text-xl"
+            type="button"
+          >
+            Contato
+          </a>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
 
