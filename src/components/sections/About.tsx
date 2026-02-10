@@ -19,6 +19,9 @@ function About() {
               <img
                 src="/img/Face_Foto.png"
                 alt="Uma foto de perfil do Matheus Mattos"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
                 className="h-full w-full object-cover"
               />
             </div>
