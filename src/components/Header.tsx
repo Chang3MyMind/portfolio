@@ -87,9 +87,8 @@ function Header({ onToggleTheme }: ToggleTheme) {
       >
         <ul className="mt-16 flex flex-col items-start space-y-4 p-4">
           {navItems.map((item) => (
-            <li>
+            <li key={item.label}>
               <a
-                key={item.label}
                 className="color-text text-xs font-semibold transition-colors duration-300 hover:text-primary dark:hover:text-primary-dark"
                 href={item.href}
                 onClick={toggleMenu}

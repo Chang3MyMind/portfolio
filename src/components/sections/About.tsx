@@ -16,7 +16,7 @@ function About() {
         <div className="grid grid-cols-1 grid-rows-2 p-5 pt-0 md:col-span-full md:gap-0 md:grid-cols-2 md:grid-rows-1 xl:gap-5 row">
           <div className="mb-3 mx-auto flex h-40 w-40 items-center justify-center overflow-hidden rounded-full md:mb-0 md:h-56 md:w-56 lg:h-80 lg:w-80">
             <img
-              src="/img/Face_Foto.png"
+              src="/img/Face_Foto.webp"
               alt="Uma foto de perfil do Matheus Mattos"
               loading="eager"
               decoding="async"
