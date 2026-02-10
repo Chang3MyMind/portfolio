@@ -41,6 +41,8 @@ function Projects() {
                   <img
                     src={project.image}
                     alt={`Uma imagem do projeto ${project.name}`}
+                    loading="lazy"
+                    decoding="async"
                     className="h-full w-full"
                   />
                 </a>
