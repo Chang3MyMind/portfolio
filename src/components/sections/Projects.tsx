@@ -39,11 +39,15 @@ function Projects() {
                   className="inline-block h-full w-full"
                 >
                   <img
-                    src={project.image}
+                    src={project.imageMobile}
+                    srcSet={`${project.imageMobile} 480w, ${project.imageTablet} 800w, ${project.imageDesktop} 1200w`}
+                    sizes="(max-width: 768px) 95vw, 50vw"
                     alt={`Uma imagem do projeto ${project.name}`}
                     loading="lazy"
                     decoding="async"
                     className="h-full w-full"
+                    width={1323}
+                    height={688}
                   />
                 </a>
                 <div className="flex items-center gap-2 mt-2">
