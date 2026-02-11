@@ -42,7 +42,8 @@ function Footer() {
       </div>
       <div className="flex items-center justify-center gap-x-8">
         <p className="text-center text-base font-medium text-text-color-dark md:text-lg dark:text-text-color">
-          &copy; 2025 Matheus Mattos. Todos os direitos reservados.
+          &copy; {new Date().getFullYear()} Matheus Mattos. Todos os direitos
+          reservados.
         </p>
       </div>
     </footer>
