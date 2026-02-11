@@ -59,6 +59,7 @@ function Header({ onToggleTheme }: ToggleTheme) {
         id="hamburger-menu"
         aria-expanded={isMenuOpen}
         aria-controls="nav-overlay"
+        aria-label="Menu Button"
         className="text-text-color focus:outline-none sm:hidden dark:text-text-color-dark"
         onClick={toggleMenu}
       >
