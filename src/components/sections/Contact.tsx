@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { contactFormSchema } from "../../schemas/contactFormSchema";
-import { NotificationContext } from "../../context/NotificationContext.js";
+import { NotificationContext } from "../../context/NotificationContext";
 
 type Data = {
   firstName: string;

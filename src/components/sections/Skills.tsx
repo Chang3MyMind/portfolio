@@ -1,5 +1,5 @@
 import SkillBar from "../ui/SkillBar.js";
-import useIntersectionObserver from "../../hooks/useIntersectionObserver.js";
+import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 
 function Skills() {
   const [ref, isIntersecting] = useIntersectionObserver({ threshold: 0.5 });
