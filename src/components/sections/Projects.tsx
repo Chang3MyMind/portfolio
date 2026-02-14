@@ -2,7 +2,7 @@ import TechnologyIcon from "../ui/TechnologyIcon";
 import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 
 import useWindowSize from "../../hooks/useWindowSize";
-import { projects } from "../../data/projects";
+import { projects } from "../../data/ProjectsItens";
 
 function Projects() {
   const { width } = useWindowSize();
