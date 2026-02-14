@@ -2,6 +2,8 @@ import { useState, useRef } from "react";
 import useOnClickOutside from "../hooks/useOnClickOutside";
 
 import { navItems } from "../data/NavItens";
+import { ToggleThemeButton } from "./ui/ToggleThemeButton";
+import { T } from "vitest/dist/chunks/reporters.d.BFLkQcL6.js";
 
 type ToggleTheme = {
   onToggleTheme: () => void;
@@ -43,15 +45,13 @@ function Header({ onToggleTheme }: ToggleTheme) {
           </a>
         ))}
 
-        <button
-          type="button"
+        <ToggleThemeButton
           id="theme-toggle"
-          aria-label="Toggle theme"
-          className="cursor-pointer text-gradient from-[#1A2B47] via-[#2C4260] to-[#4A5B73] bg-gradient-to-r dark:from-[#FF6347] dark:via-[#FFBD99] dark:to-[#FFDAB9]"
+          className="cursor-pointer"
           onClick={onToggleTheme}
         >
           Tema
-        </button>
+        </ToggleThemeButton>
       </div>
 
       <button
@@ -100,15 +100,13 @@ function Header({ onToggleTheme }: ToggleTheme) {
           ))}
 
           <li>
-            <button
-              type="button"
+            <ToggleThemeButton
               id="mobile-theme-toggle"
-              aria-label="Toggle theme"
-              className="text-xs font-semibold text-gradient from-[#1A2B47] via-[#2C4260] to-[#4A5B73] bg-gradient-to-r dark:from-[#FF6347] dark:via-[#FFBD99] dark:to-[#FFDAB9] "
+              className="text-xs font-semibold"
               onClick={onToggleTheme}
             >
               Tema
-            </button>
+            </ToggleThemeButton>
           </li>
         </ul>
       </div>
