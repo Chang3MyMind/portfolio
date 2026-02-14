@@ -7,7 +7,7 @@ import {
 
 function Footer() {
   return (
-    <footer>
+    <>
       <div className="mb-3 flex items-center justify-center gap-x-8">
         <a
           className="footer-icon"
@@ -46,7 +46,7 @@ function Footer() {
           reservados.
         </p>
       </div>
-    </footer>
+    </>
   );
 }
 
