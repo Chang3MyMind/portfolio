@@ -1,7 +1,7 @@
 import emailjs from "@emailjs/browser";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 
 import { useForm } from "react-hook-form";
@@ -9,48 +9,37 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 import { contactFormSchema } from "../../schemas/contactFormSchema";
 import { NotificationContext } from "../../context/NotificationContext";
+import z from "zod";
 
-type Data = {
-  firstName: string;
-  lastName: string;
-  email: string;
-  message: string;
-};
+type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export default function Contact() {
   const { setSendModal, setErrorModal } = useContext(NotificationContext);
 
   const [ref, isIntersecting] = useIntersectionObserver({ threshold: 0.5 });
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
     reset,
-  } = useForm({
+  } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
+    mode: "onSubmit",
   });
 
-  function sendEmail(data: Data) {
-    setIsSubmitting(true);
+  async function onSubmit(data: ContactFormData) {
+    try {
+      const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-
-    emailjs
-      .send(serviceID, templateID, data, publicKey)
-      .then(() => {
-        setSendModal();
-        reset();
-      })
-      .catch(() => {
-        setErrorModal();
-      })
-      .finally(() => {
-        setIsSubmitting(false);
-      });
+      await emailjs.send(serviceID, templateID, data, publicKey);
+      setSendModal();
+      reset();
+    } catch {
+      setErrorModal();
+    }
   }
 
   return (
@@ -71,7 +60,7 @@ export default function Contact() {
             method="post"
             role="form"
             aria-labelledby="contact-heading"
-            onSubmit={handleSubmit(sendEmail)}
+            onSubmit={handleSubmit(onSubmit)}
           >
             <div className="flex gap-x-3 md:justify-center">
               <div className="flex flex-col md:w-full">
