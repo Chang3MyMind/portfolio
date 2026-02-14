@@ -25,7 +25,8 @@ export default function Notification() {
       className=" z-50 fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
       role="dialog"
       aria-modal="true"
-      aria-labelledby={notification.modalLabel}
+      aria-labelledby="notification-title"
+      aria-describedby="notification-message"
     >
       <div className="bg-background dark:bg-background-dark p-6  rounded-lg shadow-2xl relative">
         <button
