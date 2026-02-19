@@ -1,16 +1,16 @@
 import TechnologyIcon from "../ui/TechnologyIcon";
 
-import useWindowSize from "../../hooks/useWindowSize";
 import { projects } from "../../data/ProjectsItens";
 import { RevealSection } from "../ui/RevealSection";
 
 function Projects() {
-  const { width } = useWindowSize();
-
-  const threshold = width < 1024 ? 0.15 : 0.4;
-
   return (
-    <RevealSection id="projects" title="Projetos" threshold={threshold}>
+    <RevealSection
+      id="projects"
+      title="Projetos"
+      threshold={0}
+      rootMargin="0px 0px -25% 0px"
+    >
       <div className="flex flex-col gap-y-5 md:col-span-10 lg:grid-cols-10 lg:grid-rows-2 lg:gap-x-5 lg:gap-y-10 lg:grid">
         {projects.map((project) => {
           return (

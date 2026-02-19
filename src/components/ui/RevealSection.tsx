@@ -6,6 +6,7 @@ type RevealSectionProps = {
   title: string;
   children: ReactNode;
   threshold?: number;
+  rootMargin?: string;
   scrollMtClass?: string;
 };
 
@@ -14,9 +15,10 @@ export function RevealSection({
   title,
   children,
   threshold = 0.5,
+  rootMargin = "0px",
   scrollMtClass = "scroll-mt-24",
 }: RevealSectionProps) {
-  const [ref, visible] = useIntersectionObserver({ threshold });
+  const [ref, visible] = useIntersectionObserver({ threshold, rootMargin });
 
   return (
     <section
