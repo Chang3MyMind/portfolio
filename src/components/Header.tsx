@@ -3,7 +3,6 @@ import useOnClickOutside from "../hooks/useOnClickOutside";
 
 import { navItems } from "../data/NavItens";
 import { ToggleThemeButton } from "./ui/ToggleThemeButton";
-import { T } from "vitest/dist/chunks/reporters.d.BFLkQcL6.js";
 
 type ToggleTheme = {
   onToggleTheme: () => void;
