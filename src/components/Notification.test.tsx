@@ -50,7 +50,6 @@ describe("Notification", () => {
       title: "Falha ao enviar o e-mail.",
       message: "Ocorreu um erro ao enviar o email, tente novamente mais tarde.",
       type: "error",
-      modalLabel: "Modal de erro ao enviar e-mail",
     };
 
     customRender(<Notification />, {
@@ -74,7 +73,6 @@ describe("Notification", () => {
       message:
         "E-mail enviado, obrigado por entrar em contato, em breve responderemos.",
       type: "send",
-      modalLabel: "Modal de sucesso ao enviar e-mail",
     };
 
     customRender(<Notification />, {
@@ -97,7 +95,6 @@ describe("Notification", () => {
       type: "error",
       title: "Título do Erro",
       message: "Mensagem do Erro",
-      modalLabel: "Modal de erro ao enviar e-mail",
     };
     const mockOnClose = vi.fn();
 

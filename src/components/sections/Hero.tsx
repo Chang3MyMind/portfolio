@@ -46,7 +46,6 @@ function Hero() {
             href="/CV_Matheus_Mattos_FrontEnd.pdf"
             download
             className="color-text gradient-on-bg h-fit p-3 text-xs font-medium md:text-base lg:text-lg xl:text-xl"
-            type="button"
           >
             Download CV
           </a>
